@@ -30,7 +30,7 @@ export default defineConfig({
   define: {
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'dev'),
     'process.env.PROTOCOL': JSON.stringify(process.env.PROTOCOL || 'http://'),
-    'process.env.API_HOST': JSON.stringify(process.env.API_HOST || (process.env.NODE_ENV === 'production' ? '139.59.92.196:80' : 'localhost:8081'))
+    'process.env.API_HOST': JSON.stringify(process.env.API_HOST || (process.env.NODE_ENV === 'production' ? 'api.imdbnator.com' : 'localhost:8081'))
   },
   server: {
     port: 8080

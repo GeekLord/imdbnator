@@ -34,7 +34,7 @@ export default class Process extends React.Component {
       eta: 0
     }
 
-    this.socket = io(`ws://${process.env.API_HOST}`, {
+    this.socket = io(`//${process.env.API_HOST}`, {
       path: '/daemon/process'
     })
   }
