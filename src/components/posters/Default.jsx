@@ -12,7 +12,7 @@ function Placeholder (props) {
 
   // onLoad svg does not work: https://github.com/facebook/react/issues/9607
   return (
-    <svg class={className} width={width} height={height} style={{height, width}} xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' version='1.1'>
+    <svg className={className} width={width} height={height} style={{height, width}} xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' version='1.1'>
       <rect x='0' y='0' width={width} height={height} fill="#333" />
       <text x='50%' y='50%' alignmentBaseline='middle' textAnchor='middle' fill='white' fontFamily="Proxima-Nova-Thin" fontSize={fontSize}>
         {(props.initials) ? getInitials(props.alt) : props.alt}
@@ -56,8 +56,8 @@ class TMDBPoster extends React.Component {
     let className = (this.props.className) ? this.props.className : 'ui image'
     className = (this.props.isFluid) ?  className + ' fluid' : className
 
-    // return (<img src={src} class={className} style={{display: 'none'}} alt={this.props.alt} onLoad={this._handleImageLoad.bind(this)}/>)
-    return (<img src={src} class={className}alt={this.props.alt} />)
+    // return (<img src={src} className={className} style={{display: 'none'}} alt={this.props.alt} onLoad={this._handleImageLoad.bind(this)}/>)
+    return (<img src={src} className={className}alt={this.props.alt} />)
   }
 }
 
@@ -75,7 +75,7 @@ export default class Default extends React.Component {
 
     if (this.props.href){
       return(
-        <Link to={this.props.href} class={className} style={style}>
+        <Link to={this.props.href} className={className} style={style}>
           {!isEmpty(this.props.posterPath)
             ? <TMDBPoster className={imageClass} tmdbSize={this.props.tmdbSize} posterPath={this.props.posterPath} alt={this.props.alt} isFluid={isFluid}/>
             : <Placeholder className={imageClass} width={this.props.width} height={this.props.height} tmdbSize={this.props.tmdbSize} alt={this.props.alt} initials={this.props.initials} isFluid={isFluid}/>
@@ -85,7 +85,7 @@ export default class Default extends React.Component {
       )
     } else {
       return(
-        <div class={className} style={style}>
+        <div className={className} style={style}>
           {!isEmpty(this.props.posterPath)
             ? <TMDBPoster className={imageClass} tmdbSize={this.props.tmdbSize} posterPath={this.props.posterPath} alt={this.props.alt} isFluid={isFluid}/>
             : <Placeholder className={imageClass} width={this.props.width} height={this.props.height} tmdbSize={this.props.tmdbSize} alt={this.props.alt} initials={this.props.initials} isFluid={isFluid}/>

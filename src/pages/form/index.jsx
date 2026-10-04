@@ -35,22 +35,22 @@ export default class Form extends React.Component {
       default:
     }
     return (
-      <div class='ui one column text container reactPage grid'>
-        <div class='column' style={{maxWidth: '437px'}}>
-          <div class='ui stacked center aligned segment' >
-            <h2 class='ui teal header'>
-              <div class='content'>
+      <div className='ui one column text container reactPage grid'>
+        <div className='column' style={{maxWidth: '437px'}}>
+          <div className='ui stacked center aligned segment' >
+            <h2 className='ui teal header'>
+              <div className='content'>
                 {formProps.header}
-                <div class='sub header'>
+                <div className='sub header'>
                   {formProps.description}
                 </div>
               </div>
             </h2>
-            <div class='ui divider' />
+            <div className='ui divider' />
             {formProps.form}
           </div>
-          <div class='ui mini message'>
-            <div class='header'>New to IMDbnator? </div>
+          <div className='ui mini message'>
+            <div className='header'>New to IMDbnator? </div>
             <p><Link to='/form/signup'>Sign Up</Link> | <Link to='/form/forgot'>Forgot Password</Link></p>
           </div>
         </div>
@@ -61,31 +61,31 @@ export default class Form extends React.Component {
 
 function Login (props) {
   return (
-    <form class='ui form'>
-      <div class='field'>
-        <div class='ui left icon input'>
-          <i class='user icon' />
+    <form className='ui form'>
+      <div className='field'>
+        <div className='ui left icon input'>
+          <i className='user icon' />
           <input type='text' name='email' placeholder='Username or Email address' defaultValue='email@email.com' />
         </div>
       </div>
-      <div class='field'>
-        <div class='ui left icon input'>
-          <i class='lock icon' />
+      <div className='field'>
+        <div className='ui left icon input'>
+          <i className='lock icon' />
           <input type='password' name='password' placeholder='Password' defaultValue='xj6360' />
         </div>
       </div>
-      <div class='ui fluid large teal submit button'>Login</div>
-      <div class='ui horizontal divider'>
+      <div className='ui fluid large teal submit button'>Login</div>
+      <div className='ui horizontal divider'>
         OR
       </div>
-      <div class='ui social facebook button'>
-        <i class='facebook icon' /> Facebook
+      <div className='ui social facebook button'>
+        <i className='facebook icon' /> Facebook
       </div>
-      <div class='ui social google plus button'>
-        <i class='google plus icon' /> Google
+      <div className='ui social google plus button'>
+        <i className='google plus icon' /> Google
       </div>
-      <div class='ui twitter button'>
-        <i class='twitter icon' /> Twitter
+      <div className='ui twitter button'>
+        <i className='twitter icon' /> Twitter
       </div>
     </form>
   )
@@ -93,34 +93,34 @@ function Login (props) {
 
 function Signup (props) {
   return (
-    <form class='ui form'>
-      <div class='field'>
-        <div class='ui left icon input'>
-          <i class='user icon' />
+    <form className='ui form'>
+      <div className='field'>
+        <div className='ui left icon input'>
+          <i className='user icon' />
           <input type='text' name='username' placeholder='Username' defaultValue='skd' />
         </div>
       </div>
-      <div class='field'>
-        <div class='ui left icon input'>
-          <i class='mail icon' />
+      <div className='field'>
+        <div className='ui left icon input'>
+          <i className='mail icon' />
           <input type='text' name='email' placeholder='Email address' defaultValue='geththis@gmail.com' />
         </div>
       </div>
-      <div class='field'>
-        <div class='ui left icon input'>
-          <i class='lock icon' />
+      <div className='field'>
+        <div className='ui left icon input'>
+          <i className='lock icon' />
           <input type='password' name='password' placeholder='Password' defaultValue='blahlord' />
         </div>
       </div>
-      <div class='ui fluid large teal submit button'>Signup</div>
-      <div class='ui horizontal divider'>
+      <div className='ui fluid large teal submit button'>Signup</div>
+      <div className='ui horizontal divider'>
         OR
       </div>
-      <div class='ui social facebook button'>
-        <i class='facebook icon' /> Facebook
+      <div className='ui social facebook button'>
+        <i className='facebook icon' /> Facebook
       </div>
-      <div class='ui social google plus button'>
-        <i class='google plus icon' /> Google
+      <div className='ui social google plus button'>
+        <i className='google plus icon' /> Google
       </div>
     </form>
   )
@@ -128,14 +128,14 @@ function Signup (props) {
 
 function Forgot (props) {
   return (
-    <form class='ui form'>
-      <div class='field'>
-        <div class='ui left icon input'>
-          <i class='user icon' />
+    <form className='ui form'>
+      <div className='field'>
+        <div className='ui left icon input'>
+          <i className='user icon' />
           <input type='text' name='email' placeholder='Username or Email address' />
         </div>
       </div>
-      <div class='ui fluid teal button'>Email Instructions</div>
+      <div className='ui fluid teal button'>Email Instructions</div>
     </form>
   )
 }

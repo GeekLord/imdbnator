@@ -89,32 +89,32 @@ export default class Movies extends React.Component {
     }
 
     return (
-      <div class="ui page reactPage grid">
-        <div class="two column stackable row">
-          <div class="column">
-            <h1 class="ui header">
+      <div className="ui page reactPage grid">
+        <div className="two column stackable row">
+          <div className="column">
+            <h1 className="ui header">
               Edit Movies
-              <div class="ui green label">{movies.length}</div>
-              {hasModified && <a class="ui inverted red link label" onClick={this._handleReset.bind(this)}>Reset Changes</a>}
+              <div className="ui green label">{movies.length}</div>
+              {hasModified && <a className="ui inverted red link label" onClick={this._handleReset.bind(this)}>Reset Changes</a>}
             </h1>
           </div>
-          <div class="column">
-            <div class="ui left icon fluid input">
-              <input type="text" placeholder={this.state.placeholder} value={this.state.value} class="prompt" onChange={this._handleSearch.bind(this)}/>
-              <i class="search icon"></i>
+          <div className="column">
+            <div className="ui left icon fluid input">
+              <input type="text" placeholder={this.state.placeholder} value={this.state.value} className="prompt" onChange={this._handleSearch.bind(this)}/>
+              <i className="search icon"></i>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="column">
-            <div class="ui success message">
-              <div class="header">Instructions</div>
+        <div className="row">
+          <div className="column">
+            <div className="ui success message">
+              <div className="header">Instructions</div>
               <p>This page lets you correct title mismatches. You can simply search for a title that was mismatched and choose the best title to replace it with <b>OR</b> just search for a title from the movie database and replace it with it! It's that simple and easy.</p>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="column">
+        <div className="row">
+          <div className="column">
             {isEmpty(value) && isEmpty(movies) &&
               'No movies data.'
             }
@@ -126,14 +126,14 @@ export default class Movies extends React.Component {
             }
           </div>
         </div>
-        <div class="two column stackable row">
-          <div class="column">
-            <div class="ui very relaxed selection list">
+        <div className="two column stackable row">
+          <div className="column">
+            <div className="ui very relaxed selection list">
               { Items1 }
             </div>
           </div>
-          <div class="column">
-            <div class="ui very relaxed selection list">
+          <div className="column">
+            <div className="ui very relaxed selection list">
               { Items2 }
             </div>
           </div>
@@ -158,13 +158,13 @@ class EditItem extends React.Component {
 
     return (
       <Popup on="hover" size="small" trigger={
-        <div class='item' style={itemStyle}>
-          <i class="yellow big folder icon"></i>
-          <div class="content" >
-            <div class="header">
+        <div className='item' style={itemStyle}>
+          <i className="yellow big folder icon"></i>
+          <div className="content" >
+            <div className="header">
               {title}
             </div>
-            <div class="description">
+            <div className="description">
               {input}
             </div>
           </div>

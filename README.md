@@ -4,21 +4,19 @@ IMDBnator is a free, simple and easy web app to manage movies. Movies of any for
 
 You can sort, search, filter, watch trailers before your next movie and more! :)
 
-![foo](https://i.imgur.com/HI9SCbl.jpg)
+![Home Page Screenshot](./images/screenshot.jpg)
 
 # Requirements
 
-You will need to intall [yarn](https://yarnpkg.com/lang/en/) using npm or any other way.
-```sh
-$ npm install -g yarn
-```
+You will need to have [Node.js](https://nodejs.org/) installed. We recommend Node.js v18+.
 
 # Install
 
 ```sh
 $ git clone git@github.com:saikrishnadeep/imdbnator.git
 $ cd imdbnator
-$ yarn install
-$ API_HOST=139.59.92.196:80 yarn run dev
+$ npm install --legacy-peer-deps
+$ npm run dev
 ```
-That's it! You're all setup to develop on the imdbnator client end.
+
+That's it! You're all setup to develop on the imdbnator client end. Note that for running locally, you can pass `API_HOST` parameter to change the backend endpoint, otherwise it defaults to a local backend at localhost:8081. For example, to use the production backend test URL run `API_HOST=api.imdbnator.com npm run dev`.

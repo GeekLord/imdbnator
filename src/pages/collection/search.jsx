@@ -6,12 +6,12 @@ export default class Search extends React.Component {
   }
   render () {
     return (
-      <div class='ui reactPage container grid'>
-        <div class='row'>
-          <div class='column'>
-            <h1 class='ui header'>
+      <div className='ui reactPage container grid'>
+        <div className='row'>
+          <div className='column'>
+            <h1 className='ui header'>
               Search results
-              <div class='sub header'>
+              <div className='sub header'>
                 for "Titanic"
               </div>
             </h1>

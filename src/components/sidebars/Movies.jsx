@@ -176,27 +176,27 @@ export default class Sidebar extends React.Component {
     const formatAggregates = (this.state.showAll.formats) ? aggregates.format : aggregates.format.slice(0,5)
 
     return (
-      <div class={`${(this.props.visible) ? 'visible' : 'hidden'} ui overlay sidebar inverted vertical borderless menu`}>
-        <div class="search item" style={{paddingBottom: '1rem'}}>
-          <div class="ui transparent left icon inverted input">
-            <input class="prompt" type="text" placeholder="Search categories" autoComplete="off" onChange={this._handleSearch}/>
-            <i class="search link icon"></i>
+      <div className={`${(this.props.visible) ? 'visible' : 'hidden'} ui overlay sidebar inverted vertical borderless menu`}>
+        <div className="search item" style={{paddingBottom: '1rem'}}>
+          <div className="ui transparent left icon inverted input">
+            <input className="prompt" type="text" placeholder="Search categories" autoComplete="off" onChange={this._handleSearch}/>
+            <i className="search link icon"></i>
           </div>
         </div>
-        <div class="header item">
+        <div className="header item">
           GENRE
         </div>
-        <div class="item">
-          <div class="ui inverted form">
-            <div class="grouped fields">
+        <div className="item">
+          <div className="ui inverted form">
+            <div className="grouped fields">
               {!isEmpty(genreAggregates) && genreAggregates.map(genre => {
                 return(
-                  <div class="field" key={componentKey++}>
-                    <div class="ui checkbox">
+                  <div className="field" key={componentKey++}>
+                    <div className="ui checkbox">
                       <input type="checkbox" checked={genre.isChecked} onChange={(e) => this._handleCheckBox(e, {field: 'genres', value: genre.name})} />
                       <label>{genre.name}</label>
                     </div>
-                    <div class="ui mini label" style={{float: 'right'}}>{genre.count}</div>
+                    <div className="ui mini label" style={{float: 'right'}}>{genre.count}</div>
                   </div>
                 )
               })}
@@ -205,56 +205,56 @@ export default class Sidebar extends React.Component {
             </div>
           </div>
         </div>
-        <div class="header item">
+        <div className="header item">
           YEARS
         </div>
-        <div class="item">
-          <div class="ui inverted form">
-            <div class="grouped fields">
+        <div className="item">
+          <div className="ui inverted form">
+            <div className="grouped fields">
               {!isEmpty(yearAggregates) && yearAggregates.map(year => {
                 return(
-                  <div class="field" key={componentKey++}>
-                    <div class="ui checkbox">
+                  <div className="field" key={componentKey++}>
+                    <div className="ui checkbox">
                       <input type="checkbox" checked={year.isChecked} onChange={(e) => this._handleCheckBox(e, {field: 'year', value: year.name})} />
                       <label>{year.decade} - {(year.decade+10 > 2017) ? 2017 : year.decade+10 }</label>
                     </div>
-                    <div class="ui mini label" style={{float: 'right'}}>{year.count}</div>
+                    <div className="ui mini label" style={{float: 'right'}}>{year.count}</div>
                   </div>
                 )
               })}
               {isEmpty(yearAggregates) && 'No year data.'}
             </div>
-            {!this.state.showAll.years && yearAggregates.length >= 5 && <button class="ui submit mini fluid green button" onClick={(e) => this._handleShowAll(e, 'years')}>More</button>}
-            {this.state.showAll.years &&  yearAggregates.length >= 5 && <button class="ui submit mini fluid primary button" onClick={(e) => this._handleShowAll(e, 'years')}>Less</button>}
+            {!this.state.showAll.years && yearAggregates.length >= 5 && <button className="ui submit mini fluid green button" onClick={(e) => this._handleShowAll(e, 'years')}>More</button>}
+            {this.state.showAll.years &&  yearAggregates.length >= 5 && <button className="ui submit mini fluid primary button" onClick={(e) => this._handleShowAll(e, 'years')}>Less</button>}
           </div>
         </div>
-        <div class="header item">
+        <div className="header item">
           RATING: <span style={{float: 'right'}}>({aggregates['rating'].minRating} to {aggregates['rating'].maxRating})</span>
         </div>
-        <div class="item">
+        <div className="item">
           <Rating defaultRating={Math.floor(aggregates['rating'].minRating)} maxRating={Math.floor(aggregates['rating'].maxRating)} icon='star' size='large' onRate={this._handleRate} clearable/><br/><br/>
         </div>
-        <div class="header item">
+        <div className="header item">
           FORMAT
         </div>
-        <div class="item">
-          <div class="ui inverted form">
-            <div class="grouped fields">
+        <div className="item">
+          <div className="ui inverted form">
+            <div className="grouped fields">
               {!isEmpty(formatAggregates) && formatAggregates.map(format => {
                 return(
-                  <div class="field" key={componentKey++}>
-                    <div class="ui checkbox">
+                  <div className="field" key={componentKey++}>
+                    <div className="ui checkbox">
                       <input type="checkbox" checked={format.isChecked} onChange={(e) => this._handleCheckBox(e, {field: 'format', value: format.name})} />
                       <label>{format.name}</label>
                     </div>
-                    <div class="ui mini label" style={{float: 'right'}}>{format.count}</div>
+                    <div className="ui mini label" style={{float: 'right'}}>{format.count}</div>
                   </div>
                 )
               })}
               {isEmpty(formatAggregates) && 'No format data.'}
             </div>
-            {!this.state.showAll.formats && formatAggregates.length >= 5 && <button class="ui submit mini fluid green button" onClick={(e) => this._handleShowAll(e, 'formats')}>More</button>}
-            {this.state.showAll.formats &&  formatAggregates.length >= 5 &&  <button class="ui submit mini fluid blue button" onClick={(e) => this._handleShowAll(e, 'formats')}>Less</button>}
+            {!this.state.showAll.formats && formatAggregates.length >= 5 && <button className="ui submit mini fluid green button" onClick={(e) => this._handleShowAll(e, 'formats')}>More</button>}
+            {this.state.showAll.formats &&  formatAggregates.length >= 5 &&  <button className="ui submit mini fluid blue button" onClick={(e) => this._handleShowAll(e, 'formats')}>Less</button>}
           </div>
         </div>
       </div>
