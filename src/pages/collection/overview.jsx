@@ -30,8 +30,11 @@ export default class Overview extends React.Component {
     this._handleChartClick = this._handleChartClick.bind(this)
   }
 
-  _handleChartClick(chartElement, {field}){
-    const value = chartElement[0]._view.label
+  _handleChartClick(event, activeElements, {field}){
+    if (!activeElements || activeElements.length === 0) return;
+    const dataIndex = activeElements[0].index;
+    const chartInstance = event.chart || activeElements[0].element.$context.chart;
+    const value = chartInstance.data.labels[dataIndex];
     let thisFilter = {}
     switch (field) {
       case 'language':
@@ -213,35 +216,35 @@ export default class Overview extends React.Component {
         <div className="black stackable equal width computer only row">
           <div className="column">
             <h3 className="ui center aligned header" style={{marginTop: '0', marginBottom: '1.5rem', marginBottom: '3.5rem'}}>Top Genres</h3>
-            <Chart onClick={(e) => this._handleChartClick(e, {field: 'genres'})} data={{labels:genres.map(a => a.name).slice(0,6), counts: genres.map(a => a.count).slice(0,6)}} type="pie" width={this.props.media.width/3 - '20'} height={this.props.media.width/6} />
+            <Chart onClick={(e, elements, chart) => {e.chart = chart; this._handleChartClick(e, elements, {field: 'genres'})}} data={{labels:genres.map(a => a.name).slice(0,6), counts: genres.map(a => a.count).slice(0,6)}} type="pie" width={this.props.media.width/3 - '20'} height={this.props.media.width/6} />
           </div>
           <div className="column">
             <h3 className="ui center aligned header" style={{marginTop: '0', marginBottom: '1.5rem', marginBottom: '3.5rem'}}>Rating Distribution</h3>
-            <Chart onClick={(e) => this._handleChartClick(e, {field: 'rating'})} data={{labels:ratings.map(a => a.name), counts: ratings.map(a => a.count)}} type="bar" width={this.props.media.width/3 - '20'} height={this.props.media.width/6} />
+            <Chart onClick={(e, elements, chart) => {e.chart = chart; this._handleChartClick(e, elements, {field: 'rating'})}} data={{labels:ratings.map(a => a.name), counts: ratings.map(a => a.count)}} type="bar" width={this.props.media.width/3 - '20'} height={this.props.media.width/6} />
           </div>
           <div className="column">
             <h3 className="ui center aligned header" style={{marginTop: '0', marginBottom: '1.5rem', marginBottom: '3.5rem'}}>Top Keywords</h3>
-            <Chart onClick={(e) => this._handleChartClick(e, {field: 'keywords'})} data={{labels:keywords.map(a => a.name).slice(0,6), counts: keywords.map(a => a.count).slice(0,6)}} width={300} height={150} type="pie" width={this.props.media.width/3 - '20'} height={this.props.media.width/6} />
+            <Chart onClick={(e, elements, chart) => {e.chart = chart; this._handleChartClick(e, elements, {field: 'keywords'})}} data={{labels:keywords.map(a => a.name).slice(0,6), counts: keywords.map(a => a.count).slice(0,6)}} width={300} height={150} type="pie" width={this.props.media.width/3 - '20'} height={this.props.media.width/6} />
           </div>
         </div>
         <div className="black stackable equal width tablet only row">
           <div className="column">
             <h3 className="ui center aligned header" style={{marginTop: '0', marginBottom: '1.5rem', marginBottom: '3.5rem'}}>Top Genres</h3>
-            <Chart onClick={(e) => this._handleChartClick(e, {field: 'genres'})} data={{labels:genres.map(a => a.name).slice(0,6), counts: genres.map(a => a.count).slice(0,6)}} type="pie" width={this.props.media.width/2 - '20'} height={this.props.media.width/4} />
+            <Chart onClick={(e, elements, chart) => {e.chart = chart; this._handleChartClick(e, elements, {field: 'genres'})}} data={{labels:genres.map(a => a.name).slice(0,6), counts: genres.map(a => a.count).slice(0,6)}} type="pie" width={this.props.media.width/2 - '20'} height={this.props.media.width/4} />
           </div>
           <div className="column">
             <h3 className="ui center aligned header" style={{marginTop: '0', marginBottom: '1.5rem', marginBottom: '3.5rem'}}>Rating Distribution</h3>
-            <Chart onClick={(e) => this._handleChartClick(e, {field: 'rating'})} data={{labels:ratings.map(a => a.name), counts: ratings.map(a => a.count)}} type="bar" width={this.props.media.width/2 - '20'} height={this.props.media.width/4} />
+            <Chart onClick={(e, elements, chart) => {e.chart = chart; this._handleChartClick(e, elements, {field: 'rating'})}} data={{labels:ratings.map(a => a.name), counts: ratings.map(a => a.count)}} type="bar" width={this.props.media.width/2 - '20'} height={this.props.media.width/4} />
           </div>
         </div>
         <div className="black stackable equal width tablet only row">
           <div className='column'>
             <h3 className='ui center aligned header' style={{marginTop: '0', marginBottom: '3.5rem'}}>Language Distribution</h3>
-            <Chart onClick={(e) => this._handleChartClick(e, {field: 'language'})} data={{labels:languages.map(a => a.name), counts: languages.map(a => a.count)}} type="bar" width={this.props.media.width/2 - '20'} height={this.props.media.width/4} />
+            <Chart onClick={(e, elements, chart) => {e.chart = chart; this._handleChartClick(e, elements, {field: 'language'})}} data={{labels:languages.map(a => a.name), counts: languages.map(a => a.count)}} type="bar" width={this.props.media.width/2 - '20'} height={this.props.media.width/4} />
           </div>
           <div className="column">
             <h3 className="ui center aligned header" style={{marginTop: '0', marginBottom: '1.5rem', marginBottom: '3.5rem'}}>Top Keywords</h3>
-            <Chart onClick={(e) => this._handleChartClick(e, {field: 'keywords'})} data={{labels:keywords.map(a => a.name).slice(0,6), counts: keywords.map(a => a.count).slice(0,6)}} width={300} height={150} type="pie" width={this.props.media.width/2 - '20'} height={this.props.media.width/4} />
+            <Chart onClick={(e, elements, chart) => {e.chart = chart; this._handleChartClick(e, elements, {field: 'keywords'})}} data={{labels:keywords.map(a => a.name).slice(0,6), counts: keywords.map(a => a.count).slice(0,6)}} width={300} height={150} type="pie" width={this.props.media.width/2 - '20'} height={this.props.media.width/4} />
           </div>
         </div>
         <div className="no-padding posters row">
@@ -281,12 +284,16 @@ function Chart (props) {
   const chartOptions = {
     responsive: false,
     maintainAspectRatio: true,
-    legend: {
-      position: (props.type === 'pie') ? 'left' : 'auto',
-      display: props.type !== 'bar',
-      labels: {
-        fontColor: 'white',
-        fontFamily: "'Proxima-Nova-Thin', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
+    plugins: {
+      legend: {
+        position: (props.type === 'pie') ? 'left' : 'auto',
+        display: props.type !== 'bar',
+        labels: {
+          color: 'white',
+          font: {
+            family: "'Proxima-Nova-Thin', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
+          }
+        }
       }
     },
     elements: {
@@ -296,7 +303,7 @@ function Chart (props) {
     }
   }
 
-  if (props.type === 'pie') return (<Pie getElementsAtEvent={props.onClick} data={chartData} options={chartOptions} width={props.width} height={props.height} onClick={props.onClick} />)
-  if (props.type === 'bar') return (<Bar getElementsAtEvent={props.onClick} data={chartData} options={chartOptions} width={props.width} height={props.height} onClick={props.onClick} />)
+  if (props.type === 'pie') return (<Pie onClick={(event, elements, chart) => props.onClick(event, elements, chart)} data={chartData} options={chartOptions} width={props.width} height={props.height} onClick={props.onClick} />)
+  if (props.type === 'bar') return (<Bar onClick={(event, elements, chart) => props.onClick(event, elements, chart)} data={chartData} options={chartOptions} width={props.width} height={props.height} onClick={props.onClick} />)
   return (null)
 }
