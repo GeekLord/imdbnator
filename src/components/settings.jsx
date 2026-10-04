@@ -87,47 +87,47 @@ export default class Settings extends React.Component {
 
   render() {
     return (
-      <form class="ui small form">
-        <div class="field">
+      <form className="ui small form">
+        <div className="field">
           <label>ID</label>
-            <div class="ui labeled input">
-              <div class="ui label">
+            <div className="ui labeled input">
+              <div className="ui label">
                 http://imdbnator.com/collection/
               </div>
               <input type="text" placeholder={this.state.id}  value={this.state.value.id} data-type="id" onChange={this._handleInputChange.bind(this)}/>
-                <ClipboardButton component="a" class="ui link label" style={{position: 'absolute',top: '5px', right: '3px', fontSize: '0.7rem'}} data-clipboard-text={`http://imdbnator.com/collection/${this.state.value.id}`} onClick={this._clipboardSuccess.bind(this)}>
-                  <i class="copy icon"></i> <span>Copy</span>
+                <ClipboardButton component="a" className="ui link label" style={{position: 'absolute',top: '5px', right: '3px', fontSize: '0.7rem'}} data-clipboard-text={`http://imdbnator.com/collection/${this.state.value.id}`} onClick={this._clipboardSuccess.bind(this)}>
+                  <i className="copy icon"></i> <span>Copy</span>
                 </ClipboardButton>
             </div>
         </div>
-        <div class="fields">
-          <div class="eight wide field">
+        <div className="fields">
+          <div className="eight wide field">
             <label>Name</label>
             <input type="text" placeholder={this.state.placeholder.name}  value={this.state.value.name} data-type="name" onChange={this._handleInputChange.bind(this)}/>
           </div>
-          <div class="eight wide field">
-            <label data-tooltip="You'll need this key for editing this collection later on." data-inverted="true" data-position="top left">Secret <i class="question icon"></i></label>
-            <div class="ui labeled input">
+          <div className="eight wide field">
+            <label data-tooltip="You'll need this key for editing this collection later on." data-inverted="true" data-position="top left">Secret <i className="question icon"></i></label>
+            <div className="ui labeled input">
               <input type="text" placeholder={this.state.secret} value={this.state.value.secret} data-type="secret" onChange={this._handleInputChange.bind(this)}/>
-              <ClipboardButton component="a" class="ui link label" style={{position: 'absolute',top: '5px', right: '3px', fontSize: '0.7rem'}} data-clipboard-text={this.state.value.secret} onClick={this._clipboardSuccess.bind(this)}>
-                <i class="copy icon"></i> <span>Copy</span>
+              <ClipboardButton component="a" className="ui link label" style={{position: 'absolute',top: '5px', right: '3px', fontSize: '0.7rem'}} data-clipboard-text={this.state.value.secret} onClick={this._clipboardSuccess.bind(this)}>
+                <i className="copy icon"></i> <span>Copy</span>
               </ClipboardButton>
             </div>
 
           </div>
         </div>
-        <div class="field">
+        <div className="field">
           <label>Description</label>
           <textarea rows="5" placeholder={this.state.placeholder.description} value={this.state.value.description} data-type="description" onChange={this._handleInputChange.bind(this)}></textarea>
         </div>
-        <div class="fields">
-          <div class="eight wide inline field"></div>
-          <div class="eight wide inline field">
+        <div className="fields">
+          <div className="eight wide inline field"></div>
+          <div className="eight wide inline field">
             <div style={{float: 'right'}}>
               {this.props.showSkip &&
-                <button class='ui inverted red button' type="submit" onClick={this._handleSkip.bind(this)}>Skip</button>
+                <button className='ui inverted red button' type="submit" onClick={this._handleSkip.bind(this)}>Skip</button>
               }
-              <button class={`${(this.state.isSubmitting) && 'disabled loading'} ui inverted green button`} type="submit" onClick={this._handleSubmit.bind(this)}>Save</button>
+              <button className={`${(this.state.isSubmitting) && 'disabled loading'} ui inverted green button`} type="submit" onClick={this._handleSubmit.bind(this)}>Save</button>
             </div>
           </div>
         </div>

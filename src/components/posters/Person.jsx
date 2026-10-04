@@ -27,9 +27,9 @@ export default class Person extends React.Component {
     return (
       <Default className={this.props.className} imageClass={this.props.imageClass} href={href} posterPath={poster} alt={name} tmdbSize={this.props.tmdbSize} initials={this.props.initials}>
         <div style={labelStyle}>
-          <h5 class='ui header'>
+          <h5 className='ui header'>
             {name}
-            <div class='sub header'>
+            <div className='sub header'>
               {jobs[0]} in {count} titles
             </div>
           </h5>

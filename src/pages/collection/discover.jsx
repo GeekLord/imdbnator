@@ -205,36 +205,36 @@ export default class Discover extends React.Component {
     }
 
     return (
-      <div class='ui padded stackable grid' style={{minHeight: '100%'}}>
+      <div className='ui padded stackable grid' style={{minHeight: '100%'}}>
         {!isEmpty(filteredMovies) &&
-          <div class="background" style={{backgroundImage: `url(${(bestMovie.backdrop) ? `http://image.tmdb.org/t/p/w600/${bestMovie.backdrop}` : ''})`}}></div>
+          <div className="background" style={{backgroundImage: `url(${(bestMovie.backdrop) ? `http://image.tmdb.org/t/p/w600/${bestMovie.backdrop}` : ''})`}}></div>
         }
-        <div class="row" style={{paddingTop: '4em'}}>
-          <div class="eight wide mobile seven wide tablet five wide computer center aligned column">
+        <div className="row" style={{paddingTop: '4em'}}>
+          <div className="eight wide mobile seven wide tablet five wide computer center aligned column">
             {!isEmpty(filteredMovies) &&
               <DefaultPoster href={this.props.match.path.replace('discover', `movie/${bestMovie.entryid}`)} className="ui image" posterPath={bestMovie.poster} tmdbSize="w300">
                 <div style={labelStyle}>
-                  <h5 class='ui header'>
+                  <h5 className='ui header'>
                     {bestMovie.input}
-                    <div class='sub header'>
-                      <i class="ui yellow star icon"></i> {bestMovie.rating}
+                    <div className='sub header'>
+                      <i className="ui yellow star icon"></i> {bestMovie.rating}
                     </div>
                   </h5>
                 </div>
               </DefaultPoster>
             }
           </div>
-          <div class="eight wide mobile nine wide tablet eleven wide computer column">
+          <div className="eight wide mobile nine wide tablet eleven wide computer column">
             {isEmpty(filtersQueue)
-              ? <h1 class='ui header'>Discover from {count} titles</h1>
-              : <h1 class='ui header'>
+              ? <h1 className='ui header'>Discover from {count} titles</h1>
+              : <h1 className='ui header'>
                   Found {count} titles
-                  <div class="sub header">matching this condition</div>
+                  <div className="sub header">matching this condition</div>
                 </h1>
             }
-            <div class="ui form">
-              <div class="equal width fields">
-                <div class="field">
+            <div className="ui form">
+              <div className="equal width fields">
+                <div className="field">
                   <label>Genres</label>
                     <Dropdown
                       onChange={(e,dropdown) => this._handleDropdownClick(e,dropdown, {field: 'genres'})}
@@ -246,7 +246,7 @@ export default class Discover extends React.Component {
                       placeholder='Comedy, Horror'
                     />
                 </div>
-                <div class="field">
+                <div className="field">
                   <label>Languages</label>
                     <Dropdown
                       onChange={(e,dropdown) => this._handleDropdownClick(e,dropdown, {field: 'language'})}
@@ -260,8 +260,8 @@ export default class Discover extends React.Component {
                 </div>
               </div>
 
-              <div class="equal width fields">
-                <div class="field">
+              <div className="equal width fields">
+                <div className="field">
                   <label>Decades</label>
                     <Dropdown
                       onChange={(e,dropdown) => this._handleDropdownClick(e,dropdown, {field: 'year'})}
@@ -273,7 +273,7 @@ export default class Discover extends React.Component {
                       placeholder='2000s, 1980s'
                     />
                 </div>
-                  <div class="field">
+                  <div className="field">
                   <label>Runtime</label>
                     <Dropdown
                       onChange={(e,dropdown) => this._handleDropdownClick(e,dropdown, {field: 'runtime'})}
@@ -286,8 +286,8 @@ export default class Discover extends React.Component {
                     />
                 </div>
               </div>
-              {/*<div class="fields">
-                <div class="eight wide field">
+              {/*<div className="fields">
+                <div className="eight wide field">
                   <label>Plot Keywords</label>
                     <Dropdown
                       onChange={(e,dropdown) => this._handleDropdownClick(e,dropdown, {field: 'keywords'})}
@@ -300,30 +300,30 @@ export default class Discover extends React.Component {
                     />
                 </div>
               </div>*/}
-              <div class="grouped fields">
+              <div className="grouped fields">
                 <label>Notable Movie</label>
-                <div class="field">
-                  <div class="ui checkbox">
+                <div className="field">
+                  <div className="ui checkbox">
                     <input type="checkbox" checked={this.state.checkedStates.awards} onChange={(e) => this._handleCheckBox(e, {field: 'awards', value: 'oscar'})} />
                     <label>Won / Nominated for Oscar</label>
                   </div>
                 </div>
-                <div class="field">
-                  <div class="ui checkbox">
+                <div className="field">
+                  <div className="ui checkbox">
                     <input type="checkbox" checked={this.state.checkedStates.revenue} onChange={(e) => this._handleCheckBox(e, {field: 'revenue', value: 100000000})} />
-                    <label>Box Office success ( > $100,000,000)</label>
+                    <label>Box Office success ( &gt; $100,000,000)</label>
                   </div>
                 </div>
-                <div class="field">
-                  <div class="ui checkbox">
+                <div className="field">
+                  <div className="ui checkbox">
                     <input type="checkbox" checked={this.state.checkedStates.format} onChange={(e) => this._handleCheckBox(e, {field: 'format', value: 'blu'})} />
                     <label>BluRay</label>
                   </div>
                 </div>
               </div>
               {!isEmpty(filtersQueue) &&
-                <Link class="ui right labeled icon green button" to={this.props.match.url.replace('discover', `movies/${JSON.stringify(filtersQueue)}`)}>
-                  <i class="right arrow icon"></i>
+                <Link className="ui right labeled icon green button" to={this.props.match.url.replace('discover', `movies/${JSON.stringify(filtersQueue)}`)}>
+                  <i className="right arrow icon"></i>
                   Show all titles
                 </Link>
               }

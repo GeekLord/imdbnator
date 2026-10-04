@@ -21,14 +21,14 @@ export default class User extends React.Component {
       return (<Loading />)
     }
     return (
-      <div class='ui container stackable user grid'>
-        <div class='row'>
-          <div class='column'>
-            <div class='ui pointing menu'>
-              <NavLink to={`/user/${this.state.username}/collections`} class='item'>Collections</NavLink>
-              <NavLink to={`/user/${this.state.username}/watched`} class='item'>Watched</NavLink>
-              <NavLink to={`/user/${this.state.username}/favourites`} class='item'>Favourites</NavLink>
-              <NavLink to={`/user/${this.state.username}/watchlist`} class='item'>Watchlist</NavLink>
+      <div className='ui container stackable user grid'>
+        <div className='row'>
+          <div className='column'>
+            <div className='ui pointing menu'>
+              <NavLink to={`/user/${this.state.username}/collections`} className='item'>Collections</NavLink>
+              <NavLink to={`/user/${this.state.username}/watched`} className='item'>Watched</NavLink>
+              <NavLink to={`/user/${this.state.username}/favourites`} className='item'>Favourites</NavLink>
+              <NavLink to={`/user/${this.state.username}/watchlist`} className='item'>Watchlist</NavLink>
             </div>
           </div>
         </div>
@@ -53,18 +53,18 @@ class Collections extends React.Component {
   render () {
     if (this.props.collections.length === 0) {
       return (
-        <div class='equal width row'>
-          <div class='center aligned middle aligned column'>
-            <h3 class='ui header'>
-              <div class='content'>
+        <div className='equal width row'>
+          <div className='center aligned middle aligned column'>
+            <h3 className='ui header'>
+              <div className='content'>
                 Aww ...
-                <div class='sub header'>
+                <div className='sub header'>
                   You havn't created a collection.
                 </div>
               </div>
             </h3>
-            <div class='ui inverted green labeled icon button'>
-              <i class='plus icon' />
+            <div className='ui inverted green labeled icon button'>
+              <i className='plus icon' />
               Create Collection
             </div>
           </div>
@@ -72,10 +72,10 @@ class Collections extends React.Component {
       )
     }
     return (
-      <div class='equal width row'>
+      <div className='equal width row'>
         {this.props.collections.map((collection, i) => {
           return (
-            <div class='column' key={i}>
+            <div className='column' key={i}>
               <ShowCollection collection={collection} />
             </div>
           )
@@ -91,18 +91,18 @@ class Watched extends React.Component {
   }
   render () {
     return (
-      <div class='equal width row'>
-        <div class='center aligned middle aligned column'>
-          <h3 class='ui header'>
-            <div class='content'>
+      <div className='equal width row'>
+        <div className='center aligned middle aligned column'>
+          <h3 className='ui header'>
+            <div className='content'>
               Aww ...
-              <div class='sub header'>
+              <div className='sub header'>
                 You havn't marked aything as "watched" yet.
               </div>
             </div>
           </h3>
-          <div class='ui inverted green labeled icon button'>
-            <i class='plus icon' />
+          <div className='ui inverted green labeled icon button'>
+            <i className='plus icon' />
               Add Movie
           </div>
         </div>

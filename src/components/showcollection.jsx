@@ -12,34 +12,34 @@ export default class ShowCollection extends React.Component {
       Posters.push(<DefaultPoster tmdbSize='w154' posterPath={this.props.collection[i]} key={i} />)
     }
     return (
-      <div class='ui segment'>
-        <div class='ui horizontal list'>
-          <div class='item'>
-            <div class='content'>
-              <div class='header'>Name</div>
-              <div class='description'>Untitled Collection</div>
+      <div className='ui segment'>
+        <div className='ui horizontal list'>
+          <div className='item'>
+            <div className='content'>
+              <div className='header'>Name</div>
+              <div className='description'>Untitled Collection</div>
             </div>
           </div>
-          <div class='item'>
-            <div class='content'>
-              <div class='header'>Location</div>
-              <div class='description'><a href='http://imdbnator.com/hGd3s-Bj'>http://imdbnator.com/hGd3s-Bj</a>
+          <div className='item'>
+            <div className='content'>
+              <div className='header'>Location</div>
+              <div className='description'><a href='http://imdbnator.com/hGd3s-Bj'>http://imdbnator.com/hGd3s-Bj</a>
               </div>
             </div>
           </div>
-          <div class='item'>
-            <div class='content'>
-              <div class='ui green button'>Edit</div>
+          <div className='item'>
+            <div className='content'>
+              <div className='ui green button'>Edit</div>
             </div>
           </div>
-          <div class='item'>
-            <div class='content'>
-              <div class='ui inverted red button'>Delete</div>
+          <div className='item'>
+            <div className='content'>
+              <div className='ui inverted red button'>Delete</div>
             </div>
           </div>
         </div>
-        <div class='ui divider' />
-        <div class='ui tiny images'>
+        <div className='ui divider' />
+        <div className='ui tiny images'>
           { Posters }
         </div>
       </div>

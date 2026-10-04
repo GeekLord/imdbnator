@@ -188,32 +188,32 @@ export default class Browse extends React.Component {
       segmentStyle = {border: '3px dashed grey'}
     }
     return (
-      <reactdiv class={`${!this.props.isActive && 'force hide'}`}>
-        <div class='ui very padded center aligned inverted segment' style={segmentStyle} onDragOver={this._handleChange} onDragLeave={this._handleChange} onDrop={this._handleChange}>
+      <reactdiv className={`${!this.props.isActive && 'force hide'}`}>
+        <div className='ui very padded center aligned inverted segment' style={segmentStyle} onDragOver={this._handleChange} onDragLeave={this._handleChange} onDrop={this._handleChange}>
           <input type='file' multiple='' id='files' onChange={this._handleChange} />
           {(!this.state.isDone || isEmpty(this.state.inputs)) &&
-            <h2 class="ui header">
+            <h2 className="ui header">
               Drag & Drop
-              <div class="sub header" style={{fontSize: '1rem', color: 'rgba(255,255,255,0.3)'}}>your folder with movies</div>
-              <h4 class="ui header">OR</h4>
+              <div className="sub header" style={{fontSize: '1rem', color: 'rgba(255,255,255,0.3)'}}>your folder with movies</div>
+              <h4 className="ui header">OR</h4>
             </h2>
           }
 
           {this.state.isDone && !isEmpty(this.state.inputs) &&
-            <h2 class="ui header">
+            <h2 className="ui header">
               Awesome!
-              <div class="sub header" style={{fontSize: '1rem', color: 'rgba(255,255,255,0.3)'}}>
+              <div className="sub header" style={{fontSize: '1rem', color: 'rgba(255,255,255,0.3)'}}>
                 We found a total of {this.state.inputs.length} media files
               </div>
-              <div class="ui header">
-                <div class="sub header" style={{fontSize: '1rem', color: 'rgba(255,255,255,0.3)'}}>
+              <div className="ui header">
+                <div className="sub header" style={{fontSize: '1rem', color: 'rgba(255,255,255,0.3)'}}>
                   Add more?
                 </div>
               </div>
             </h2>
           }
-          <div class='ui labeled icon green large button' onClick={this._showBrowseDialog}>
-            <i class='yellow folder icon' />
+          <div className='ui labeled icon green large button' onClick={this._showBrowseDialog}>
+            <i className='yellow folder icon' />
             Browse Folder
           </div>
 

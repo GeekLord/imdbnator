@@ -37,10 +37,10 @@ export default class Edit extends React.Component {
     if (!this.state.doesOwn){
       return(
         <Modal open={true} basic size='small'>
-          <div class="header">Authorize</div>
-          <div class="content">
-            <div class="ui form">
-              <div class="field">
+          <div className="header">Authorize</div>
+          <div className="content">
+            <div className="ui form">
+              <div className="field">
                 <label>Enter secret</label>
                 <input type="text" placeholder='bazgina!' onChange={this._checkSecret.bind(this)} />
               </div>
@@ -77,9 +77,9 @@ class ClosestTitles extends React.Component {
   render () {
     if (this.state.isFetching) {
       return (
-        <div class='ui three column divided center aligned grid'>
+        <div className='ui three column divided center aligned grid'>
           {[...Array(3).keys()].map((a, i) =>
-            <div class='column' key={componentKey++} />
+            <div className='column' key={componentKey++} />
           )}
         </div>
       )
@@ -87,8 +87,8 @@ class ClosestTitles extends React.Component {
 
     if (this.state.error) {
       return (
-        <div class='ui one column center aligned grid'>
-          <div class='column'>
+        <div className='ui one column center aligned grid'>
+          <div className='column'>
             {this.state.errorMessage}
           </div>
         </div>
@@ -97,8 +97,8 @@ class ClosestTitles extends React.Component {
 
     if (this.state.hits.length === 0) {
       return (
-        <div class='ui one column center aligned grid'>
-          <div class='column'>
+        <div className='ui one column center aligned grid'>
+          <div className='column'>
             No results found for {this.state.title}.
           </div>
         </div>
@@ -110,14 +110,14 @@ class ClosestTitles extends React.Component {
     const columnCount = (maxResults === 3) ? 'three' : ((maxResults === 2) ? 'two' : 'one')
 
     return (
-      <div class={`ui ${columnCount} column divided center aligned grid`}>
+      <div className={`ui ${columnCount} column divided center aligned grid`}>
         {hits.slice(0, maxResults).map((hit, i) => {
           return (
-            <div class='column' key={componentKey++}>
-              <h4 class='ui header'>{hit._source.title}</h4>
+            <div className='column' key={componentKey++}>
+              <h4 className='ui header'>{hit._source.title}</h4>
               <Poster posterPath={hit._source.poster} tmdbSize='w58_and_h87_bestv2' alt={hit._source.title} />
               <p><b>XX</b> distance with {hit._source.title.votes} votes</p>
-              <div class='ui button'>Choose</div>
+              <div className='ui button'>Choose</div>
             </div>
           )
         })}
