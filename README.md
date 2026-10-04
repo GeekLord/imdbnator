@@ -19,4 +19,4 @@ $ npm install --legacy-peer-deps
 $ npm run dev
 ```
 
-That's it! You're all setup to develop on the imdbnator client end. Note that for running locally, you can pass `API_HOST` parameter to change the backend endpoint, otherwise it defaults to the test URL.
+That's it! You're all setup to develop on the imdbnator client end. Note that for running locally, you can pass `API_HOST` parameter to change the backend endpoint, otherwise it defaults to a local backend at localhost:8081. For example, to use the production backend test URL run `API_HOST=api.imdbnator.com npm run dev`.
