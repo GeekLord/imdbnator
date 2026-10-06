@@ -45,7 +45,7 @@ export default class Landing extends React.Component {
                 <div className='sub header'>
                   All your movie data with format, ratings, trailer, genre, cast, plot & more in one place.
                   <div className="ui red small message" style={{textAlign:'left'}}>
-                    <div className="ui blue label">UPDATE (21-1-2018)</div> Due to limited users and service expenses, we have decided to stop service. You can setup the entire backend API and data dumps by cloning our <a href="https://github.com/saikrishnadeep/imdbnator-api">repo</a>. The app requires only around 4GB of memory and 2 CPU cores to run. If you wish to help everyone out with this free service by hosting it on your server, then please <a href="mailto:imdbnator@gmail.com">contact</a> us :)  - IMDbnator Team
+                    <div className="ui blue label">UPDATE (21-1-2018)</div> Due to limited users and service expenses, we have decided to stop service. You can setup the entire backend API and data dumps by cloning our <a href="https://github.com/GeekLord/imdbnator-api">repo</a>. The app requires only around 4GB of memory and 2 CPU cores to run. If you wish to help everyone out with this free service by hosting it on your server, then please <a href="mailto:imdbnator@gmail.com">contact</a> us :)  - IMDbnator Team
                   </div>
                 </div>
               </h1>
