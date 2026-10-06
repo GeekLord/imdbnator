@@ -9,6 +9,8 @@ git config user.name "Travis Bot"
 git config user.email "travis@travis-ci.org"
 
 git remote add github "https://${GH_TOKEN}@github.com/saikrishnadeep/imdbnator.github.io.git"
+cp -R dist/* .
+
 git add --all
 git commit -m "Build $TRAVIS_COMMIT"
 git push -qf github HEAD:gh-pages

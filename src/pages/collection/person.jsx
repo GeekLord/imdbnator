@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter, connect} from 'react-redux'
+import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import includes from 'lodash.includes'
 
@@ -53,48 +53,48 @@ export default class Person extends React.Component {
     debug && console.log('Person (INFO):', person)
 
     return (
-      <div class='ui active page dimmer'>
-        <div class='content'>
-          <div class='ui container grid'>
-            <div class="two column row">
-              <div class="left floated left aligned column">
-                <i class="left arrow link big icon" onClick={()=>{this.props.history.goBack()}}></i>
+      <div className='ui active page dimmer'>
+        <div className='content'>
+          <div className='ui container grid'>
+            <div className="two column row">
+              <div className="left floated left aligned column">
+                <i className="left arrow link big icon" onClick={()=>{this.props.history.goBack()}}></i>
               </div>
-              <div class="right floated right aligned column">
-                <i class="close link big icon" onClick={()=>{this.props.history.push(this.props.match.path.replace('person/:tmdbid','people'))}}></i>
+              <div className="right floated right aligned column">
+                <i className="close link big icon" onClick={()=>{this.props.history.push(this.props.match.path.replace('person/:tmdbid','people'))}}></i>
               </div>
             </div>
-            <div class='stackable row'>
-              <div class='five wide column'>
-                <div class='ui movie image'>
+            <div className='stackable row'>
+              <div className='five wide column'>
+                <div className='ui movie image'>
                   <DefaultPoster posterPath={profile_path} tmdbSize='w300' addStyle={{width: '300px', height: 'auto'}} alt='No Poster' />
-                  <div class='ui image dimmer'>
-                    <div class='content'>
-                      <div class='center'>
-                        <h2 class='ui inverted header'>Play</h2>
-                        <div class='ui primary button'><i class='play icon' /> Movie</div>
-                        <div class='ui red button'><i class='youtube play icon' /> Trailer</div>
+                  <div className='ui image dimmer'>
+                    <div className='content'>
+                      <div className='center'>
+                        <h2 className='ui inverted header'>Play</h2>
+                        <div className='ui primary button'><i className='play icon' /> Movie</div>
+                        <div className='ui red button'><i className='youtube play icon' /> Trailer</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class='left aligned six wide column'>
-                <h1 class='ui inverted header'>
+              <div className='left aligned six wide column'>
+                <h1 className='ui inverted header'>
                   {name}
                 </h1>
-                <div class='ui list'>
-                  <div class='item'>Birthday: {birthday}</div>
-                  <div class='item'>Birth: {place_of_birth}</div>
-                  <div class='item'>Roles: {jobs.join(', ')}</div>
-                  <div class='item'>Biography: {biography.substring(0, 1000)}. <a href={`http://www.imdb.com/name/${imdb_id}`} target="new">...</a></div>
+                <div className='ui list'>
+                  <div className='item'>Birthday: {birthday}</div>
+                  <div className='item'>Birth: {place_of_birth}</div>
+                  <div className='item'>Roles: {jobs.join(', ')}</div>
+                  <div className='item'>Biography: {biography.substring(0, 1000)}. <a href={`http://www.imdb.com/name/${imdb_id}`} target="new">...</a></div>
                 </div>
               </div>
-              <div class="left aligned five wide column">
-                <h1 class="ui inverted header">
+              <div className="left aligned five wide column">
+                <h1 className="ui inverted header">
                   Found in <Link to={`/collection/${this.props.id}/movies/[{"movies":{"OR":[{"field":"cast","value":"${name}","condition":"includes"}, {"field":"crew","value":"${name}","condition":"includes"}]}}]`}>{movies.length}</Link> movies
                 </h1>
-                <div class="ui images">
+                <div className="ui images">
                   {movies.slice(0,9).map(movie => {
                     return(<DefaultPoster href={`/collection/${this.props.id}/movie/${movie.entryid}`} className="ui image" posterPath={movie.poster} tmdbSize="w92" alt={movie.title} key={componentKey++}/>)
                   })}

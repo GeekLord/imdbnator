@@ -63,40 +63,40 @@ export default class Process extends React.Component {
 
     return (
       <div>
-        <div class='ui padded borderless top attached inverted menu'>
-          <div class='left menu'>
-            <NavLink to='/' class='item' activeClassName=''><i class='left angle icon' /></NavLink>
-            <div class='header item'>
+        <div className='ui padded borderless top attached inverted menu'>
+          <div className='left menu'>
+            <NavLink to='/' className='item' activeClassName=''><i className='left angle icon' /></NavLink>
+            <div className='header item'>
               IMDBnator
             </div>
           </div>
         </div>
-        <div class='ui green bottom attached progress'>
-          <div class='bar' style={{width: `${(this.state.processedCount / this.state.totalCount) * 100}%`}}>
-            <div class='progress' />
+        <div className='ui green bottom attached progress'>
+          <div className='bar' style={{width: `${(this.state.processedCount / this.state.totalCount) * 100}%`}}>
+            <div className='progress' />
           </div>
         </div>
-        <div class='ui grid'>
-          <div class='row'>
-            <div class='ui one column text container grid' style={{marginTop: '10px'}}>
-              <div class='column'>
-                <div class='ui segment'>
-                  <div class='ui horizontal link fluid list'>
-                    <div class='item'>
-                      <div class='content'>
-                        <div class='header'>
+        <div className='ui grid'>
+          <div className='row'>
+            <div className='ui one column text container grid' style={{marginTop: '10px'}}>
+              <div className='column'>
+                <div className='ui segment'>
+                  <div className='ui horizontal link fluid list'>
+                    <div className='item'>
+                      <div className='content'>
+                        <div className='header'>
                           {isEmpty(this.state.received) && 'Connecting ...' }
                           {!this.state.isProcessed && !isEmpty(this.state.received)  && 'Processing'}
                           {this.state.isProcessed && 'Redirecting ...'}
                         </div>
-                        <div class='description'>
+                        <div className='description'>
                           {(!this.state.isProcessed && this.state.received.length !== 0) && this.state.received[0].input}
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class='ui divider' />
-                  <div class='ui tiny images' style={{textAlign: 'center', height: '360px', maxHeight: '360px', overflowY: 'scroll', overflowX: 'hidden'}}>
+                  <div className='ui divider' />
+                  <div className='ui tiny images' style={{textAlign: 'center', height: '360px', maxHeight: '360px', overflowY: 'scroll', overflowX: 'hidden'}}>
                     { Posters }
                   </div>
                 </div>

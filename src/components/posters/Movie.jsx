@@ -30,14 +30,14 @@ export default class Movie extends React.Component {
     return (
       <Default className={this.props.className} imageClass={this.props.imageClass} href={href} posterPath={posterPath} alt={title} tmdbSize={this.props.tmdbSize}>
         {(!isEmpty(awards)) && includes(awards, 'Oscar') &&
-          <div class="ui yellow corner label">
-            <i class="trophy icon"></i>
+          <div className="ui yellow corner label">
+            <i className="trophy icon"></i>
           </div>
         }
         <div style={labelStyle}>
-          <h5 class='ui header'>
+          <h5 className='ui header'>
             {title}
-            <div class='sub header'>
+            <div className='sub header'>
               {year}
             </div>
           </h5>

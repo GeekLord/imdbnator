@@ -1,5 +1,5 @@
-const isEmpty = require('lodash.isempty')
-const includes = require('lodash.includes')
+import isEmpty from 'lodash.isempty'
+import includes from 'lodash.includes'
 
 function pushOwns(id){
   const owns = !isEmpty(localStorage.getItem('owns')) ? JSON.parse(localStorage.getItem('owns')) : []
@@ -14,7 +14,7 @@ function checkOwns(id){
   return doesOwn
 }
 
-module.exports = {
+export {
   pushOwns,
   checkOwns
 };

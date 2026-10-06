@@ -61,13 +61,13 @@ export default class FindMovie extends React.Component {
     const key3 = componentKey++
 
     return [
-      <div class='image' key={key1}>
+      <div className='image' key={key1}>
         <DefaultPoster tmdbSize='w45' posterPath={image} alt={title} key={key2} />
       </div>,
-      <div class='content' key={key3}>
-        {price && <div class='price'>{price}</div>}
-        {title && <div class='title' dangerouslySetInnerHTML={{__html: title}} />}
-        {description && <div class='description'>{description}</div>}
+      <div className='content' key={key3}>
+        {price && <div className='price'>{price}</div>}
+        {title && <div className='title' dangerouslySetInnerHTML={{__html: title}} />}
+        {description && <div className='description'>{description}</div>}
       </div>
     ]
   }

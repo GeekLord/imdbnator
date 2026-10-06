@@ -24,15 +24,15 @@ export default class Load extends React.Component {
     }
 
     return (
-      <div class={this.props.addClass}>
+      <div className={this.props.addClass}>
 
         {this.props.children}
 
         {/* Menu */}
-        <div class='ui three buttons'>
-          <div data-tab='pc' class={`${(this.state.activeTab === 'pc') ? 'ui red button' : 'ui button'}`} onClick={this._updateActiveTab.bind(this)}>PC</div>
-          <div data-tab='text' class={`${(this.state.activeTab === 'text') ? 'ui red button' : 'ui button'}`} onClick={this._updateActiveTab.bind(this)}>Text</div>
-          <div data-tab='web' class={`${(this.state.activeTab === 'web') ? 'ui red button' : 'ui button'}`} onClick={this._updateActiveTab.bind(this)}>Web</div>
+        <div className='ui three buttons'>
+          <div data-tab='pc' className={`${(this.state.activeTab === 'pc') ? 'ui red button' : 'ui button'}`} onClick={this._updateActiveTab.bind(this)}>PC</div>
+          <div data-tab='text' className={`${(this.state.activeTab === 'text') ? 'ui red button' : 'ui button'}`} onClick={this._updateActiveTab.bind(this)}>Text</div>
+          <div data-tab='web' className={`${(this.state.activeTab === 'web') ? 'ui red button' : 'ui button'}`} onClick={this._updateActiveTab.bind(this)}>Web</div>
         </div>
 
         {/* Tabs */}

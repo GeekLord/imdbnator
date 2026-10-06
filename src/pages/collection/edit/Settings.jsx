@@ -46,14 +46,14 @@ export default class Settings extends React.Component {
 
   render() {
     return (
-      <div class="ui page reactPage grid">
-        <div class="row">
-          <div class="column">
-            <h1 class="ui header">Settings</h1>
+      <div className="ui page reactPage grid">
+        <div className="row">
+          <div className="column">
+            <h1 className="ui header">Settings</h1>
           </div>
         </div>
-        <div class="two column row">
-          <div class="column">
+        <div className="two column row">
+          <div className="column">
             <SettingsForm id={this.props.id} secret={this.props.secret} settings={this.props.settings} onSuccess={this._settingsSuccess.bind(this)} onError={this._settingsError.bind(this)}/>
           </div>
         </div>

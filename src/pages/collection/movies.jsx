@@ -188,7 +188,7 @@ export default class Movies extends React.Component{
 
     let Message = []
     if (total === 0){
-      Message.push(<div class="column">No movies matching the criteron.</div>)
+      Message.push(<div className="column">No movies matching the criteron.</div>)
     }
 
     let Content = []
@@ -204,7 +204,7 @@ export default class Movies extends React.Component{
       switch (this.state.view) {
         case 'celled':
           Content.push(
-            <div class="no-padding eight wide mobile four wide tablet two wide computer column" key={componentKey++} >
+            <div className="no-padding eight wide mobile four wide tablet two wide computer column" key={componentKey++} >
               <MoviePoster className="ui fluid image" tmdbSize="w185" movie={movie} />
             </div>
           )
@@ -224,7 +224,7 @@ export default class Movies extends React.Component{
           const Row = columns.map(field => {
             let cell = movie[field]
             if (field === 'entryid') cell = cell + 1
-            if (field === 'title') cell = <div style={{textAlign: 'center'}}><h5 class="ui header"><div class="content"><Link to={`/collection/${this.props.id}/movie/${movie.entryid}/`} title={movie.title}>{movie.title}</Link><div class='sub header'>({movie.year})</div></div></h5><DefaultPoster className="ui image" posterPath={movie.poster} tmdbSize="w45"/></div>
+            if (field === 'title') cell = <div style={{textAlign: 'center'}}><h5 className="ui header"><div className="content"><Link to={`/collection/${this.props.id}/movie/${movie.entryid}/`} title={movie.title}>{movie.title}</Link><div className='sub header'>({movie.year})</div></div></h5><DefaultPoster className="ui image" posterPath={movie.poster} tmdbSize="w45"/></div>
             if (field === 'rating') cell = `${cell} (${comma(movie['votes'])})`
             if (field === 'genres') cell = cell.join(', ')
             if (field === 'cast') cell = cell.map(a => a.name).join(', ')
@@ -234,7 +234,7 @@ export default class Movies extends React.Component{
 
           // Wrap Content
           if (i+1 === section[1]){
-            Content = <div class="column"><div class="ui inverted fixed table"><thead><tr>{Columns}</tr></thead><tbody>{Content}</tbody></div></div>
+            Content = <div className="column"><div className="ui inverted fixed table"><thead><tr>{Columns}</tr></thead><tbody>{Content}</tbody></div></div>
           }
           break;
         default:
@@ -243,42 +243,42 @@ export default class Movies extends React.Component{
     }
 
     return (
-      <div class="ui padded divided grid">
-        <div class="one column row">
-          <div class="ui secondary fluid menu">
+      <div className="ui padded divided grid">
+        <div className="one column row">
+          <div className="ui secondary fluid menu">
             <Pagination addClass="left menu" activePage={page} itemsPerPage={perPage} totalItems={total} dispatch={this._handlePaginationClick}>
-              <div class="item">Showing {section[0]} - {section[1]} of {total} movies</div>
+              <div className="item">Showing {section[0]} - {section[1]} of {total} movies</div>
             </Pagination>
-            <div class="right menu">
-              <div class="ui simple dropdown item">
-                <i class="eye icon"></i>
+            <div className="right menu">
+              <div className="ui simple dropdown item">
+                <i className="eye icon"></i>
                 Change View
-              <div class="menu" style={{marginTop: 0}}>
-                <a class="item" onClick={(e) => this._handleViewClick(e, 'celled')}>Posters</a>
-                <a class="item" onClick={(e) => this._handleViewClick(e, 'table')}>Table</a>
+              <div className="menu" style={{marginTop: 0}}>
+                <a className="item" onClick={(e) => this._handleViewClick(e, 'celled')}>Posters</a>
+                <a className="item" onClick={(e) => this._handleViewClick(e, 'table')}>Table</a>
               </div>
               </div>
-              <div class="ui simple dropdown item" onClick={this._handleOrderClick}>
+              <div className="ui simple dropdown item" onClick={this._handleOrderClick}>
                 {this.state.sort.order === 'asc'
-                  ? <i class={`${(includes(['year','rating','votes','runtime','popularity','revenue','budget','size'], this.state.sort.field)) ? 'numeric' :'alphabet'} sort ascending icon`}></i>
-                  : <i class={`${(includes(['year','rating','votes','runtime','popularity','revenue','budget','size'], this.state.sort.field)) ? 'numeric' :'alphabet'} sort descending icon`}></i>
+                  ? <i className={`${(includes(['year','rating','votes','runtime','popularity','revenue','budget','size'], this.state.sort.field)) ? 'numeric' :'alphabet'} sort ascending icon`}></i>
+                  : <i className={`${(includes(['year','rating','votes','runtime','popularity','revenue','budget','size'], this.state.sort.field)) ? 'numeric' :'alphabet'} sort descending icon`}></i>
                 }
                 Sort by
-                <div class="menu" style={{marginTop: '0'}}>
-                  <a class={`${(this.state.sort.field === 'entryid') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"entryid")}><i class="hashtag icon"></i>Default</a>
-                  <a class={`${(this.state.sort.field === 'title') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"title")}><i class="font icon"></i>Title</a>
-                  <a class={`${(this.state.sort.field === 'rating') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"rating")}><i class="yellow star icon"></i>Rating</a>
-                  <a class={`${(this.state.sort.field === 'year') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"year")}><i class="calendar icon"></i>Year</a>
-                  <a class={`${(this.state.sort.field === 'runtime') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"runtime")}><i class="clock icon"></i>Runtime</a>
-                  <a class={`${(this.state.sort.field === 'votes') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"votes")}><i class="users icon"></i>Votes</a>
-                  <a class={`${(this.state.sort.field === 'size') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"size")}><i class="file icon"></i>File Size</a>
+                <div className="menu" style={{marginTop: '0'}}>
+                  <a className={`${(this.state.sort.field === 'entryid') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"entryid")}><i className="hashtag icon"></i>Default</a>
+                  <a className={`${(this.state.sort.field === 'title') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"title")}><i className="font icon"></i>Title</a>
+                  <a className={`${(this.state.sort.field === 'rating') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"rating")}><i className="yellow star icon"></i>Rating</a>
+                  <a className={`${(this.state.sort.field === 'year') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"year")}><i className="calendar icon"></i>Year</a>
+                  <a className={`${(this.state.sort.field === 'runtime') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"runtime")}><i className="clock icon"></i>Runtime</a>
+                  <a className={`${(this.state.sort.field === 'votes') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"votes")}><i className="users icon"></i>Votes</a>
+                  <a className={`${(this.state.sort.field === 'size') ? 'active item' : 'item'}`} onClick={(e) => this._handleSortClick(e,"size")}><i className="file icon"></i>File Size</a>
                 </div>
               </div>
-              <a class={`${(this.state.sidebarVisible) ? 'active item' : 'item'}`} onClick={this._toggleSidebar.bind(this)}><i class="options icon"></i> Filter</a>
-              <div class="item">
-                <div class="ui icon transparent input">
-                  <input type="text" placeholder={this.state.placeholder} class="prompt" onChange={this._handleSearch.bind(this)}/>
-                  <i class="search icon"></i>
+              <a className={`${(this.state.sidebarVisible) ? 'active item' : 'item'}`} onClick={this._toggleSidebar.bind(this)}><i className="options icon"></i> Filter</a>
+              <div className="item">
+                <div className="ui icon transparent input">
+                  <input type="text" placeholder={this.state.placeholder} className="prompt" onChange={this._handleSearch.bind(this)}/>
+                  <i className="search icon"></i>
                 </div>
               </div>
             </div>
@@ -286,16 +286,16 @@ export default class Movies extends React.Component{
         </div>
 
         <MovieSidebar visible={this.state.sidebarVisible} onFiltersChange={this._sidebarFiltersUpdate.bind(this)}/>
-        <div class="no-padding row">
+        <div className="no-padding row">
           { Message }
           { Content }
         </div>
         {this.state.view === 'table' &&
-          <div class="row" style={{paddingBottom: '1em'}}>
-            <div class="column">
-              <div class="ui secondary fluid menu">
+          <div className="row" style={{paddingBottom: '1em'}}>
+            <div className="column">
+              <div className="ui secondary fluid menu">
                 <Pagination addClass="left menu" activePage={page} itemsPerPage={perPage} totalItems={total} dispatch={this._handlePaginationClick}>
-                  <div class="item">Showing {section[0]} - {section[1]} of {total} movies</div>
+                  <div className="item">Showing {section[0]} - {section[1]} of {total} movies</div>
                 </Pagination>
               </div>
             </div>

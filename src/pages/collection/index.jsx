@@ -99,8 +99,8 @@ export default class Collection extends React.Component {
     if (this.state.showSettings){
       return(
         <Modal open={true} basic size='small'>
-          <div class="header">Collection settings</div>
-          <div class="content">
+          <div className="header">Collection settings</div>
+          <div className="content">
             <Settings id={this.props.id} secret={this.props.secret} settings={this.props.settings} showSkip={true} onSkip={this._settingsSkip.bind(this)} onSuccess={this._settingsSuccess.bind(this)} onError={this._settingsError.bind(this)}/>
           </div>
         </Modal>
@@ -108,28 +108,28 @@ export default class Collection extends React.Component {
     }
 
     return(
-      <reactdiv>
-        <div class='ui borderless no-margin inverted menu'>
-          <div class='left computer only menu'>
-            <NavLink to='/' class='item' activeClassName='item'><i class='home icon' /></NavLink>
-            <div class='active header item'>{(this.props.settings.name) ? this.props.settings.name : 'Untitled Collection'}</div>
-            <NavLink to={`${this.props.match.url}/overview`} class='item' activeClassName='active red item'>Overview</NavLink>
-            <NavLink to={`${this.props.match.url}/movies`} class='item' activeClassName='active red item'>Movies</NavLink>
-            <NavLink to={`${this.props.match.url}/people`} class='item' activeClassName='active red item'>People</NavLink>
-            <NavLink to={`${this.props.match.url}/genres`} class='item' activeClassName='active red item'>Genres</NavLink>
-            <NavLink to={`${this.props.match.url}/discover`} class='item' activeClassName='active red item'>Discover <div class="ui floating green mini label" style={{top: '0.5em'}}>New</div></NavLink>
+      <div>
+        <div className='ui borderless no-margin inverted menu'>
+          <div className='left computer only menu'>
+            <NavLink to='/' className='item' activeClassName='item'><i className='home icon' /></NavLink>
+            <div className='active header item'>{(this.props.settings.name) ? this.props.settings.name : 'Untitled Collection'}</div>
+            <NavLink to={`${this.props.match.url}/overview`} className='item' activeClassName='active red item'>Overview</NavLink>
+            <NavLink to={`${this.props.match.url}/movies`} className='item' activeClassName='active red item'>Movies</NavLink>
+            <NavLink to={`${this.props.match.url}/people`} className='item' activeClassName='active red item'>People</NavLink>
+            <NavLink to={`${this.props.match.url}/genres`} className='item' activeClassName='active red item'>Genres</NavLink>
+            <NavLink to={`${this.props.match.url}/discover`} className='item' activeClassName='active red item'>Discover <div className="ui floating green mini label" style={{top: '0.5em'}}>New</div></NavLink>
           </div>
-          <div class="right menu">
-            <div class='ui category search item'>
+          <div className="right menu">
+            <div className='ui category search item'>
               <FindAny />
             </div>
           {this.state.doesOwn &&
-              <div class='ui simple dropdown item'>
+              <div className='ui simple dropdown item'>
               Edit
-              <div class="menu">
-                <NavLink to={`${this.props.match.url}/edit/movies`} class="item">Movies</NavLink>
-                <NavLink to={`${this.props.match.url}/edit/errors`} class="item">Errors</NavLink>
-                <NavLink to={`${this.props.match.url}/edit/settings`} class="item">Settings</NavLink>
+              <div className="menu">
+                <NavLink to={`${this.props.match.url}/edit/movies`} className="item">Movies</NavLink>
+                <NavLink to={`${this.props.match.url}/edit/errors`} className="item">Errors</NavLink>
+                <NavLink to={`${this.props.match.url}/edit/settings`} className="item">Settings</NavLink>
               </div>
             </div>}
           </div>
@@ -147,7 +147,7 @@ export default class Collection extends React.Component {
           <Route path={`${this.props.match.url}/edit`} component={Edit} />
           <Redirect to={`/collection/${this.props.match.params.id}/movies`} />
         </Switch>
-      </reactdiv>
+      </div>
     )
   }
 

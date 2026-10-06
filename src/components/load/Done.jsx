@@ -1,5 +1,5 @@
 import React from 'react'
-import {hashHistory, withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {pushOwns} from 'modules/user'
 import {randomNumber} from 'modules/utils'
@@ -81,18 +81,18 @@ export default class Done extends React.Component {
       return(null)
     }
     return (
-      <div class='ui bottom fixed inverted massive borderless menu'>
-        <div class='left menu'></div>
-        <div class='left menu'>
-          <div class='item'>
-            <i class='green check icon' />
+      <div className='ui bottom fixed inverted massive borderless menu'>
+        <div className='left menu'></div>
+        <div className='left menu'>
+          <div className='item'>
+            <i className='green check icon' />
             <span dangerouslySetInnerHTML={{__html: this.state.successMessage}} />
           </div>
         </div>
-        <div class='right menu'>
-          <div class='item'>
-            <div class={`${(this.state.isFetching) ? 'disabled loading' : 'inverted icon right labeled'} ui green button`} onClick={this._handleSubmit}>
-              <i class='right arrow icon' />
+        <div className='right menu'>
+          <div className='item'>
+            <div className={`${(this.state.isFetching) ? 'disabled loading' : 'inverted icon right labeled'} ui green button`} onClick={this._handleSubmit}>
+              <i className='right arrow icon' />
               Process
             </div>
           </div>

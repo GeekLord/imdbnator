@@ -204,4 +204,4 @@ function wordUpperCase (str) {
   })
 }
 
-module.exports = guess
+export default guess
