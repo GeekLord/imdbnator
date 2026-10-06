@@ -108,7 +108,11 @@ export default class Collection extends React.Component {
     }
 
     return(
+<<<<<<< HEAD
       <div>
+=======
+      <reactdiv>
+>>>>>>> master
         <div className='ui borderless no-margin inverted menu'>
           <div className='left computer only menu'>
             <NavLink to='/' className='item' activeClassName='item'><i className='home icon' /></NavLink>

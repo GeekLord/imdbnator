@@ -5,6 +5,10 @@ import path from 'path';
 export default defineConfig({
   plugins: [
     react({
+<<<<<<< HEAD
+=======
+      jsxRuntime: 'classic',
+>>>>>>> master
       babel: {
         plugins: [
           ["@babel/plugin-proposal-decorators", { legacy: true }],
@@ -28,7 +32,11 @@ export default defineConfig({
   },
   define: {
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'dev'),
+<<<<<<< HEAD
     'process.env.PROTOCOL': JSON.stringify(process.env.PROTOCOL || (process.env.NODE_ENV === 'production' ? 'https://' : 'http://')),
+=======
+    'process.env.PROTOCOL': JSON.stringify(process.env.PROTOCOL || 'http://'),
+>>>>>>> master
     'process.env.API_HOST': JSON.stringify(process.env.API_HOST || (process.env.NODE_ENV === 'production' ? 'api.imdbnator.com' : 'localhost:8081'))
   },
   server: {
