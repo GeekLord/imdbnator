@@ -13,7 +13,7 @@ You will need to have [Node.js](https://nodejs.org/) installed. We recommend Nod
 # Install
 
 ```sh
-$ git clone git@github.com:saikrishnadeep/imdbnator.git
+$ git clone git@github.com:GeekLord/imdbnator.git
 $ cd imdbnator
 $ npm install --legacy-peer-deps
 $ npm run dev

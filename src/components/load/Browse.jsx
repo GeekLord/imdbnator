@@ -188,7 +188,11 @@ export default class Browse extends React.Component {
       segmentStyle = {border: '3px dashed grey'}
     }
     return (
+<<<<<<< HEAD
+      <div className={`${!this.props.isActive && 'force hide'}`}>
+=======
       <reactdiv className={`${!this.props.isActive && 'force hide'}`}>
+>>>>>>> master
         <div className='ui very padded center aligned inverted segment' style={segmentStyle} onDragOver={this._handleChange} onDragLeave={this._handleChange} onDrop={this._handleChange}>
           <input type='file' multiple='' id='files' onChange={this._handleChange} />
           {(!this.state.isDone || isEmpty(this.state.inputs)) &&
@@ -225,7 +229,7 @@ export default class Browse extends React.Component {
         {(this.state.isDone && !isEmpty(this.state.inputs)) &&
           <Done type='pc' inputs={this.state.inputs} message={this.state.message} misc={{pc: window.navigator.userAgent}} />
          }
-      </reactdiv>
+      </div>
     )
   }
   componentDidMount () {

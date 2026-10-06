@@ -77,7 +77,11 @@ export default class Text extends React.Component {
 
   render () {
     return (
+<<<<<<< HEAD
+      <div className={`${!this.props.isActive && 'force hide'}`}>
+=======
       <reactdiv className={`${!this.props.isActive && 'force hide'}`}>
+>>>>>>> master
         <div className='ui very padded inverted segment'>
           <div className='ui form'>
             <div className='field'>
@@ -94,7 +98,7 @@ export default class Text extends React.Component {
           <Done type='text' inputs={this.state.inputs} message={`You have entered <b>${this.state.inputs.length}</b> titles.`} misc={{pc: window.navigator.userAgent, lines: 'all'}} />
         }
 
-      </reactdiv>
+      </div>
     )
   }
 

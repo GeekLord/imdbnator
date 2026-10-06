@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import ShowCollection from 'components/showcollection'
 import {Loading} from 'components/notifications'
 
-const mockCollections = require('samples/collections')
+import mockCollections from "samples/collections"
 
 export default class User extends React.Component {
   constructor (props) {

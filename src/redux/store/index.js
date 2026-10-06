@@ -1,8 +1,13 @@
 import { applyMiddleware, legacy_createStore as createStore, combineReducers } from 'redux'
+<<<<<<< HEAD
+import { createLogger } from 'redux-logger';
+const logger = createLogger();
+=======
 import logger from 'redux-logger'
+>>>>>>> master
 import reducers from '../reducers'
 
 const debug = process.env.NODE_ENV !== "production"
-const middleware = (debug) ? applyMiddleware(logger) : applyMiddleware()
+const middleware = (debug) ? applyMiddleware(logger) : undefined
 
 export default createStore(reducers, middleware)
