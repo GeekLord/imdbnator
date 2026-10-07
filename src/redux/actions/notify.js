@@ -12,7 +12,7 @@ function removeGlobalNotify (key) {
   }
 }
 
-module.exports = {
+export {
   globalNotify,
   removeGlobalNotify
 }

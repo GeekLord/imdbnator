@@ -4,7 +4,7 @@ let componentKey = 0
 
 function Item (props) {
   return (
-    <a class={(props.active) ? 'active item' : 'item'} onClick={props.onClick} data-page={props.page} >{props.text}</a>
+    <a className={(props.active) ? 'active item' : 'item'} onClick={props.onClick} data-page={props.page} >{props.text}</a>
   )
 }
 
@@ -23,7 +23,7 @@ export default function Pagination (props) {
 
   if (finalPage === 1) {
     return (
-    <div class={props.addClass}>
+    <div className={props.addClass}>
       {props.children}
     </div>)
   }
@@ -31,8 +31,8 @@ export default function Pagination (props) {
   // Double left and Single left page arrows
   let prevPage = (activePage === 1) ? 1 : (activePage - 1)
   Items.push(
-    <Item onClick={props.dispatch} page='1' text={<i class='double left angle icon' data-page='1' />} key={componentKey++} />,
-    <Item onClick={props.dispatch} page={prevPage} text={<i class='left angle icon' data-page={prevPage} />} key={componentKey++} />
+    <Item onClick={props.dispatch} page='1' text={<i className='double left angle icon' data-page='1' />} key={componentKey++} />,
+    <Item onClick={props.dispatch} page={prevPage} text={<i className='left angle icon' data-page={prevPage} />} key={componentKey++} />
   )
 
   // Generate middle pages
@@ -91,12 +91,12 @@ export default function Pagination (props) {
   // Double right and single right page arrows
   let nextPage = (activePage === finalPage) ? finalPage : (activePage + 1)
   Items.push(
-    <Item onClick={props.dispatch} page={nextPage} text={<i class='right angle icon' data-page={nextPage} />} key={componentKey++} />,
-    <Item onClick={props.dispatch} page={finalPage} text={<i class='double right angle icon' data-page={finalPage} />} key={componentKey++} />
+    <Item onClick={props.dispatch} page={nextPage} text={<i className='right angle icon' data-page={nextPage} />} key={componentKey++} />,
+    <Item onClick={props.dispatch} page={finalPage} text={<i className='double right angle icon' data-page={finalPage} />} key={componentKey++} />
   )
 
   return (
-    <div class={props.addClass}>
+    <div className={props.addClass}>
       {props.children}
       { Items }
     </div>

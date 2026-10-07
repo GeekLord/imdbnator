@@ -77,10 +77,10 @@ export default class Text extends React.Component {
 
   render () {
     return (
-      <reactdiv class={`${!this.props.isActive && 'force hide'}`}>
-        <div class='ui very padded inverted segment'>
-          <div class='ui form'>
-            <div class='field'>
+      <div className={`${!this.props.isActive && 'force hide'}`}>
+        <div className='ui very padded inverted segment'>
+          <div className='ui form'>
+            <div className='field'>
               <label style={{float: 'left'}}>Enter Movies</label>
               {(this.state.inputs.length)
                 ? <a style={{float: 'right'}} href='javascript:void(0)' onClick={this._clearText.bind(this)}>Clear</a>
@@ -94,7 +94,7 @@ export default class Text extends React.Component {
           <Done type='text' inputs={this.state.inputs} message={`You have entered <b>${this.state.inputs.length}</b> titles.`} misc={{pc: window.navigator.userAgent, lines: 'all'}} />
         }
 
-      </reactdiv>
+      </div>
     )
   }
 

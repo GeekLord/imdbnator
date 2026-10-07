@@ -57,35 +57,35 @@ export default class Errors extends React.Component {
     }
 
     return (
-      <div class="ui page reactPage grid">
-        <div class="stackable two column row">
-          <div class="column">
-            <h1 class="ui header">
-              Edit Errors <div class="ui red label">{errors.length}</div>
+      <div className="ui page reactPage grid">
+        <div className="stackable two column row">
+          <div className="column">
+            <h1 className="ui header">
+              Edit Errors <div className="ui red label">{errors.length}</div>
             </h1>
           </div>
-          <div class="column">
-            <div class="ui left icon fluid input">
-              <input type="text" placeholder={this.state.placeholder} value={this.state.value} class="prompt" onChange={this._handleSearch.bind(this)}/>
-              <i class="search icon"></i>
+          <div className="column">
+            <div className="ui left icon fluid input">
+              <input type="text" placeholder={this.state.placeholder} value={this.state.value} className="prompt" onChange={this._handleSearch.bind(this)}/>
+              <i className="search icon"></i>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div className="row">
           {(!isEmpty(errors))  &&
-            <div class="column">
-              <div class="ui error message">
-                <div class="header">Instructions</div>
+            <div className="column">
+              <div className="ui error message">
+                <div className="header">Instructions</div>
                 <p>This page lists titles we couldnt identify. You can simply search for a title that was mismatched and choose the best title to replace it with <b>OR</b> just search for a title to replace it with it! It's that simple and easy.</p>
               </div>
             </div>
           }
         </div>
-        <div class="row">
-          <div class="column">
+        <div className="row">
+          <div className="column">
             {isEmpty(value) && isEmpty(errors) &&
-              <div class="ui success message">
-                <div class="header">Geat!</div>
+              <div className="ui success message">
+                <div className="header">Geat!</div>
                 <p>Looks like we had no errors. If you wish to crosscheck our movie matches, then please click &nbsp;
                   <Link to={this.props.match.path.replace('errors', 'movies')}>here</Link>
                 </p>
@@ -96,14 +96,14 @@ export default class Errors extends React.Component {
             }
           </div>
         </div>
-        <div class="equal width stackable row">
-          <div class="column">
-            <div class="ui very relaxed selection list">
+        <div className="equal width stackable row">
+          <div className="column">
+            <div className="ui very relaxed selection list">
               { Items1 }
             </div>
           </div>
-          <div class="column">
-            <div class="ui very relaxed selection list">
+          <div className="column">
+            <div className="ui very relaxed selection list">
               { Items2 }
             </div>
           </div>
@@ -125,13 +125,13 @@ class EditItem extends React.Component {
     const {entryid, input, guess} = this.props.error
     return (
       <Popup on="hover" size="small" trigger={
-        <div class="item" style={{wordBreak: 'break-all'}} style={{wordBreak: 'break-all'}}>
-          <i class="yellow big folder icon"></i>
-          <div class="content" >
-            <div class="header">
+        <div className="item" style={{wordBreak: 'break-all'}} style={{wordBreak: 'break-all'}}>
+          <i className="yellow big folder icon"></i>
+          <div className="content" >
+            <div className="header">
               {input}
             </div>
-            <div class="description">
+            <div className="description">
               {guess}
             </div>
           </div>

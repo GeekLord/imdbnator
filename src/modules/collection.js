@@ -4,19 +4,19 @@ Bugs
   - Sort genres in alphabet order AFTER the the genres have been extracted
  */
 
-const isEqual = require('lodash.isequal')
-const isEmpty = require('lodash.isempty')
-const isNumber = require('lodash.isnumber')
-const isArray = require('lodash.isarray')
-const includes = require('lodash.includes')
-const findIndex = require('lodash.findindex')
-const cloneDeep = require('lodash.clonedeep')
-const uniqWith = require('lodash.uniqwith')
-const mergeWith = require('lodash.mergewith')
-const differenceWith = require('lodash.differencewith')
-const intersectionWith = require('lodash.intersectionwith')
+import isEqual from 'lodash.isequal'
+import isEmpty from 'lodash.isempty'
+import isNumber from 'lodash.isnumber'
+import isArray from 'lodash.isarray'
+import includes from 'lodash.includes'
+import findIndex from 'lodash.findindex'
+import cloneDeep from 'lodash.clonedeep'
+import uniqWith from 'lodash.uniqwith'
+import mergeWith from 'lodash.mergewith'
+import differenceWith from 'lodash.differencewith'
+import intersectionWith from 'lodash.intersectionwith'
 
-const formatBytes = require('./utils').formatBytes
+import { formatBytes } from './utils'
 
 function formatCollection (prevCollection) {
   const collection = cloneDeep(prevCollection)
@@ -772,7 +772,7 @@ function combineFilters (oldFilters, newFilters, type) {
   return cloneDeep(filters)
 }
 
-module.exports = {
+export {
   formatCollection,
   aggregateSection,
   sortMovies,
@@ -856,13 +856,13 @@ if (process.env.DEBUG) {
   // const filters = combineFilters(base, add)
   // console.log(JSON.stringify(filters))
 
-  // const mockCollection = require('../samples/populatedCollection')
+  // import mockCollection from '../samples/populatedCollection'
   // console.log(JSON.stringify(formatCollection(mockCollection)))
   //
   // console.log(JSON.stringify(similarMovies(30, mockMovies)))
   // console.log(JSON.stringify(sortMovies(mockMovies, {field: 'title', order: 'desc'})))
 
-  // const collection = require('../samples/formattedCollection')
+  // import collection from '../samples/formattedCollection'
   // const aggregates = aggregateSection(collection, {fields: ['genres', 'year', 'format'], checked: {'cast': ['Brad Pitt'], 'genres': ['Drama'], 'format': ['DVDRip'], 'year': [2011]}, onlySection: 'movies', debug: true})
   // const aggregates = aggregateSection(collection, {fields: ['jobs', 'name', 'gender'], checked: {'jobs': ['Cast'], 'gender': [2], 'name': ['Brad Pitt']}, onlySection: 'people', debug: true})
   // console.log(JSON.stringify(aggregates))

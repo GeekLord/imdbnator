@@ -78,21 +78,21 @@ export default class Web extends React.Component {
 
   render () {
     return (
-      <reactdiv class={`${!this.props.isActive && 'force hide'}`}>
-        <div class='ui very padded inverted segment'>
-          <div class='ui bottom right attached label'><i class='connectdevelop icon' /> Beta</div>
-          <div class='ui form'>
-            <div class={`field ${(this.state.invalidURL) ? 'error' : ''}`} >
+      <div className={`${!this.props.isActive && 'force hide'}`}>
+        <div className='ui very padded inverted segment'>
+          <div className='ui bottom right attached label'><i className='connectdevelop icon' /> Beta</div>
+          <div className='ui form'>
+            <div className={`field ${(this.state.invalidURL) ? 'error' : ''}`} >
               <label>
                 {this.state.fetchAttempts === 0
                   ? 'Enter URL'
                   : 'Try another?'
                 }
               </label>
-              <div class='ui action left icon input' >
+              <div className='ui action left icon input' >
                 <input type='text' value={(this.state.inputURL) ? this.state.inputURL : ''} onChange={this.__handleInputChange} />
-                <i class='globe icon' />
-                <button class={`ui red ${this.state.isFetching ? 'loading' : ''} ${(this.state.invalidURL) ? 'disabled' : ''} button`} onClick={this.__handleFetchClick}>
+                <i className='globe icon' />
+                <button className={`ui red ${this.state.isFetching ? 'loading' : ''} ${(this.state.invalidURL) ? 'disabled' : ''} button`} onClick={this.__handleFetchClick}>
                     Fetch
                   </button>
               </div>
@@ -100,14 +100,14 @@ export default class Web extends React.Component {
           </div>
         </div>
         {!isEmpty(this.state.inputs) && !this.state.fetchAttempts !== 0 &&
-          <div class='ui segment'>
-            <div class="ui header">Found:</div>
-            <div class='ui list' style={{maxHeight: '200px', overflowY: 'scroll', paddingTop: '1rem'}}>
+          <div className='ui segment'>
+            <div className="ui header">Found:</div>
+            <div className='ui list' style={{maxHeight: '200px', overflowY: 'scroll', paddingTop: '1rem'}}>
               {this.state.inputs.map((input, i) => {
                 return (
-                  <div class='item' key={i}>
-                    <i class='right angle icon' />
-                    <div class='content'>
+                  <div className='item' key={i}>
+                    <i className='right angle icon' />
+                    <div className='content'>
                       {input.name}
                     </div>
                   </div>
@@ -120,7 +120,7 @@ export default class Web extends React.Component {
         {!isEmpty(this.state.inputs) && this.state.fetchAttempts !== 0 && !this.state.isFetching &&
           <Done type='web' inputs={this.state.inputs} message={this.state.message} misc={{pc: window.navigator.userAgent, url: this.state.inputURL}} />
         }
-      </reactdiv>
+      </div>
     )
   }
 }

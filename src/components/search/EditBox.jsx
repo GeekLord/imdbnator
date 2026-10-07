@@ -112,13 +112,13 @@ export default class EditBox extends React.Component {
     const key3 = componentKey++
 
     return [
-      <div class='image' key={key1}>
+      <div className='image' key={key1}>
         <DefaultPoster className="ui image" tmdbSize='w45' posterPath={image} alt={title} key={key2} />
       </div>,
-      <div class='content' key={key3}>
-        {price && <div class='price'>{price}</div>}
-        {title && <div class='title' dangerouslySetInnerHTML={{__html: title}} />}
-        {description && <div class='description'>{description}</div>}
+      <div className='content' key={key3}>
+        {price && <div className='price'>{price}</div>}
+        {title && <div className='title' dangerouslySetInnerHTML={{__html: title}} />}
+        {description && <div className='description'>{description}</div>}
       </div>
     ]
   }
@@ -132,9 +132,9 @@ export default class EditBox extends React.Component {
 
   render () {
     return (
-      <div class='ui three column celled center aligned grid'>
-        <div class='one column row'>
-          <div class='column'>
+      <div className='ui three column celled center aligned grid'>
+        <div className='one column row'>
+          <div className='column'>
             <Search
               loading={this.state.isSearchLoading}
               results={this._hitsToDropdown(this.state.searchHits)}
@@ -144,16 +144,16 @@ export default class EditBox extends React.Component {
             />
           </div>
         </div>
-        <div class='equal width row'>
+        <div className='equal width row'>
           {this.state.isClosestLoading && [1,2,3].map(i => {
             return(
-              <div class='column' key={componentKey++}>
-                <h4 class="ui header">
+              <div className='column' key={componentKey++}>
+                <h4 className="ui header">
                   Loading
                 </h4>
                 <DefaultPoster className="ui image" posterPath={null} width='58px' height='87px' alt='Loading' />
                 <p>Confidence: 0%</p>
-                <div class="ui loading green button">Choose</div>
+                <div className="ui loading green button">Choose</div>
               </div>
             )})
           }
@@ -163,14 +163,14 @@ export default class EditBox extends React.Component {
           {!this.state.isClosestLoading && this.state.closestHits.slice(0, 3).map((hit,i) => {
             const isDisabled = hit._source.imdbid === this.props.movie.imdbid  || hit._source.tmdbid === this.props.movie.tmdbid
             return (
-              <div class='column' key={componentKey++}>
-                <h4 class='ui header'>
+              <div className='column' key={componentKey++}>
+                <h4 className='ui header'>
                   <span style={{textOverflow: 'ellipsis'}}>{hit._source.title}</span>
-                    <div class="sub header">({hit._source.year})</div>
+                    <div className="sub header">({hit._source.year})</div>
                 </h4>
                 <DefaultPoster className="ui image" posterPath={hit._source.poster} tmdbSize='w58_and_h87_bestv2' width='58px' height='87px' alt={hit._source.title} />
                 <p>Confidence: {Math.floor((hit._score/this.state.maxClosestScore) * 100)}%</p>
-                <div class={`${(this.state.isStoring) && 'loading disabled'} ${(isDisabled) && 'disabled'} ui green button`} data-imdbid={hit._source.imdbid} data-tmdbid={hit._source.tmdbid} onClick={this._handleChoose.bind(this)}>Choose</div>
+                <div className={`${(this.state.isStoring) && 'loading disabled'} ${(isDisabled) && 'disabled'} ui green button`} data-imdbid={hit._source.imdbid} data-tmdbid={hit._source.tmdbid} onClick={this._handleChoose.bind(this)}>Choose</div>
               </div>
             )
           })}

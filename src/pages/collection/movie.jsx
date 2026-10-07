@@ -76,19 +76,19 @@ export default class Movie extends React.Component {
         const { tmdbid, name, gender, character, poster } = cast[i]
         let Cast = (i % 2 === 0) ? Cast1 : Cast2
         Cast.push(
-          <Link to={`/collection/${this.props.id}/person/${tmdbid}`} class='item' key={componentKey++}>
-            <div class='ui image'>
+          <Link to={`/collection/${this.props.id}/person/${tmdbid}`} className='item' key={componentKey++}>
+            <div className='ui image'>
               <DefaultPoster isFluid={true} noStretch={true} className="actor" posterPath={poster} tmdbSize='w50_and_h50_bestv2' fontSize='40' alt={name} initials={true}/>
             </div>
-            <div class='middle aligned content'>
-              <div class='header'>{name}</div>
-              <div class='description'>as {character}</div>
+            <div className='middle aligned content'>
+              <div className='header'>{name}</div>
+              <div className='description'>as {character}</div>
             </div>
           </Link>
         )
       }
     } else {
-      Cast1.push(<div class="item">No cast data.</div>)
+      Cast1.push(<div className="item">No cast data.</div>)
     }
 
     const Crew1 = []
@@ -98,19 +98,19 @@ export default class Movie extends React.Component {
         const { tmdbid, name, gender, job, poster } = crew[i]
         let Crew = (i % 2 === 0) ? Crew1 : Crew2
         Crew.push(
-          <Link to={`/collection/${this.props.id}/person/${tmdbid}`} class='item' key={componentKey++}>
-            <div class='ui image'>
+          <Link to={`/collection/${this.props.id}/person/${tmdbid}`} className='item' key={componentKey++}>
+            <div className='ui image'>
               <DefaultPoster isFluid={true} noStretch={true} className="actor" posterPath={poster} tmdbSize='w50_and_h50_bestv2' fontSize='40' alt={name} initials={true}/>
             </div>
-            <div class='middle aligned content'>
-              <div class='header'>{name}</div>
-              <div class='description'>{job}</div>
+            <div className='middle aligned content'>
+              <div className='header'>{name}</div>
+              <div className='description'>{job}</div>
             </div>
           </Link>
         )
       }
     } else {
-      Crew1.push(<div class="item">No crew data.</div>)
+      Crew1.push(<div className="item">No crew data.</div>)
     }
 
     // Get Similar movies
@@ -136,33 +136,33 @@ export default class Movie extends React.Component {
     }
 
     return (
-      <div class="ui active page dimmer" style={{position: 'absolute', textAlign: 'initial', height: 'initial', minHeight: '100%  '}}>
-        <div class="backdrop" style={{backgroundImage: `url(http://image.tmdb.org/t/p/w154/${backdrop})`}}></div>
-        <div class="ui padded grid" style={{height: '100%'}}>
-          <div class="two column row">
-            <div class="left floated left aligned column">
-              <i class="left arrow link big icon" onClick={()=>{this.props.history.goBack()}}></i>
+      <div className="ui active page dimmer" style={{position: 'absolute', textAlign: 'initial', height: 'initial', minHeight: '100%  '}}>
+        <div className="backdrop" style={{backgroundImage: `url(http://image.tmdb.org/t/p/w154/${backdrop})`}}></div>
+        <div className="ui padded grid" style={{height: '100%'}}>
+          <div className="two column row">
+            <div className="left floated left aligned column">
+              <i className="left arrow link big icon" onClick={()=>{this.props.history.goBack()}}></i>
             </div>
-            <div class="right floated right aligned column">
-              <i class="close link big icon" onClick={()=>{this.props.history.push(this.props.match.path.replace('movie/:entryid','movies'))}}></i>
+            <div className="right floated right aligned column">
+              <i className="close link big icon" onClick={()=>{this.props.history.push(this.props.match.path.replace('movie/:entryid','movies'))}}></i>
             </div>
           </div>
-          <div class="stackable row">
-            <div class="sixteen wide mobile five wide tablet five wide computer center aligned column" >
+          <div className="stackable row">
+            <div className="sixteen wide mobile five wide tablet five wide computer center aligned column" >
               <DefaultPoster className="ui center aligned image" posterPath={poster} tmdbSize='w300' alt='No Poster'>
-                <div class={`${(this.state.showDimmer) ? 'active' : ''} ui image dimmer`}>
-                  <div class='content'>
-                    <div class='center'>
-                      <h2 class='ui inverted header'>Play</h2>
-                      <div class='ui primary button'><i class='play icon' /> Movie</div>
-                      <div class='ui red button'><i class='youtube play icon' /> Trailer</div>
+                <div className={`${(this.state.showDimmer) ? 'active' : ''} ui image dimmer`}>
+                  <div className='content'>
+                    <div className='center'>
+                      <h2 className='ui inverted header'>Play</h2>
+                      <div className='ui primary button'><i className='play icon' /> Movie</div>
+                      <div className='ui red button'><i className='youtube play icon' /> Trailer</div>
                     </div>
                   </div>
                 </div>
                 <Link to={`/collection/${this.props.id}/edit/movies/${input}`} style={labelStyle}>
-                  <h5 class="ui inverted header">
+                  <h5 className="ui inverted header">
                     {input}
-                    <div class="sub red header">
+                    <div className="sub red header">
                       ({formatBytes(size)})
                     </div>
                   </h5>
@@ -170,84 +170,84 @@ export default class Movie extends React.Component {
               </DefaultPoster>
               {!isEmpty(keywords) &&
                 [
-                  <div class="ui inverted header">Plot Keywords</div>,
+                  <div className="ui inverted header">Plot Keywords</div>,
                   keywords.join(', ')
                 ]
               }
-              <div class="ui inverted header">External Links</div>
-                <div class="ui horizontal link list">
-                  <a class="item" href={`http://imdb.com/title/${imdbid}`} target="_blank">IMDB</a>
-                  <a class="item" href={`https://rottentomatoes.com/m/${title.replace(/[^a-zA-Z0-9]/g, '_').replace(/_+/g, '_')}`} target="_blank">Rotten Tomatoes</a>
-                  <a class="item" href={`https://themoviedb.org/movie/${tmdbid}`} target="_blank">TMDb</a>
-                  <a class="item" href={`https://www.youtube.com/results?search_query=${title.replace(' ', '+')}+trailer`} target="_blank">Youtube</a>
-                  <a class="item" href={`https://google.com/search?q=${title.replace(' ', '+')}`} target="_blank">Google</a>
+              <div className="ui inverted header">External Links</div>
+                <div className="ui horizontal link list">
+                  <a className="item" href={`http://imdb.com/title/${imdbid}`} target="_blank">IMDB</a>
+                  <a className="item" href={`https://rottentomatoes.com/m/${title.replace(/[^a-zA-Z0-9]/g, '_').replace(/_+/g, '_')}`} target="_blank">Rotten Tomatoes</a>
+                  <a className="item" href={`https://themoviedb.org/movie/${tmdbid}`} target="_blank">TMDb</a>
+                  <a className="item" href={`https://www.youtube.com/results?search_query=${title.replace(' ', '+')}+trailer`} target="_blank">Youtube</a>
+                  <a className="item" href={`https://google.com/search?q=${title.replace(' ', '+')}`} target="_blank">Google</a>
                 </div>
             </div>
-            <div class="eleven wide tablet eleven wide computer column">
-              <div class="ui two column stackable grid">
-                <div class="eight wide column">
-                  <h1 class='ui header'>{title} ({year})</h1>
-                  <div class='ui list'>
+            <div className="eleven wide tablet eleven wide computer column">
+              <div className="ui two column stackable grid">
+                <div className="eight wide column">
+                  <h1 className='ui header'>{title} ({year})</h1>
+                  <div className='ui list'>
                     {isNumber(rating) &&
-                      <div class='item'>Rating: <div class="ui red label">{rating}</div> ({(isNumber(votes)) ? votes.comma(',') : votes})</div>
+                      <div className='item'>Rating: <div className="ui red label">{rating}</div> ({(isNumber(votes)) ? votes.comma(',') : votes})</div>
                     }
                     {isNumber(runtime) &&
-                      <div class='item'>Runtime: {runtime} mins</div>
+                      <div className='item'>Runtime: {runtime} mins</div>
                     }
                     {!isEmpty(genres) &&
-                      <div class='item'>Genres: {genres.join(', ')}</div>
+                      <div className='item'>Genres: {genres.join(', ')}</div>
                     }
                     {!isEmpty(language) &&
-                      <div class='item'>Language: {language}</div>
+                      <div className='item'>Language: {language}</div>
                     }
                     {!isEmpty(awards) &&
-                      <div class='item'>Awards: {awards}</div>
+                      <div className='item'>Awards: {awards}</div>
                     }
 
-                    <div class='item'>Plot: {plot}</div>
+                    <div className='item'>Plot: {plot}</div>
                   </div>
                 </div>
-                <div class="eight wide column">
+                <div className="eight wide column">
                   {(!isEmpty(trailers)) &&
                     [
-                      <div class="ui inverted header">Trailer</div>,
+                      <div className="ui inverted header">Trailer</div>,
                       <iframe src={`https://www.youtube.com/embed/${trailers[0].source}?rel=0&amp;showinfo=0&amp;autoplay=0&amp;iv_load_policy=3&amp;autoplay=1`}  width="100%" height="220" frameBorder="1" allowFullScreen></iframe>
                     ]
                   }
                 </div>
-                <div class="ten wide column">
-                  <div class="ui inverted header">Starring</div>
-                  <div class='ui two column stackable grid'>
-                    <div class='column'>
-                      <div class='ui inverted list'>
+                <div className="ten wide column">
+                  <div className="ui inverted header">Starring</div>
+                  <div className='ui two column stackable grid'>
+                    <div className='column'>
+                      <div className='ui inverted list'>
                         { Cast1 }
                       </div>
                     </div>
-                    <div class='column'>
-                      <div class='ui inverted list'>
+                    <div className='column'>
+                      <div className='ui inverted list'>
                         { Cast2 }
                       </div>
                     </div>
                   </div>
-                  <div class="ui inverted header">Crew</div>
-                  <div class='ui two column stackable grid'>
-                    <div class='column'>
-                      <div class='ui inverted list'>
+                  <div className="ui inverted header">Crew</div>
+                  <div className='ui two column stackable grid'>
+                    <div className='column'>
+                      <div className='ui inverted list'>
                         { Crew1 }
                       </div>
                     </div>
-                    <div class='column'>
-                      <div class='ui inverted list'>
+                    <div className='column'>
+                      <div className='ui inverted list'>
                         { Crew2 }
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="six wide column">
+                <div className="six wide column">
                   {(!isEmpty(SimilarMovies)) &&
                     [
-                      <div class="ui inverted header">Similar Movies</div>,
-                      <div class="ui images">
+                      <div className="ui inverted header">Similar Movies</div>,
+                      <div className="ui images">
                         { SimilarMovies }
                       </div>
                     ]

@@ -32,18 +32,18 @@ export default class Genres extends React.Component {
     }
 
     return (
-      <div class='ui padded divided grid'>
-        <div class='no-padding row' style={{paddingBottom: '0rem'}}>
+      <div className='ui padded divided grid'>
+        <div className='no-padding row' style={{paddingBottom: '0rem'}}>
           {this.props.genres.map((genre) => {
             const {name, count, poster, backdrop} = genre
             const href = this.props.match.path.replace('genres', `movies/[{"movies":{"AND":[{"field": "genres","value":"${name}", "condition": "includes"}]}}]`)
             return(
-              <div class="no-padding sixteen wide mobile eight wide tablet four wide computer column" key={componentKey++} >
+              <div className="no-padding sixteen wide mobile eight wide tablet four wide computer column" key={componentKey++} >
                 <DefaultPoster className="ui fluid image" href={href} posterPath={backdrop} tmdbSize="w300" alt={name} key={componentKey++}>
                   <div style={labelStyle}>
-                    <h2 class="ui inverted header">
+                    <h2 className="ui inverted header">
                       {name}
-                      <div class="sub header">
+                      <div className="sub header">
                         {count} movies
                       </div>
                     </h2>

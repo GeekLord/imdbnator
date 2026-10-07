@@ -8,13 +8,13 @@ export default class Add extends React.Component {
   }
   render () {
     return (
-      <div class='ui page reactPage grid'>
-        <div class="row">
-          <div class='column'>
+      <div className='ui page reactPage grid'>
+        <div className="row">
+          <div className='column'>
             <FindMovie />
           </div>
         </div>
-        <div class="row">
+        <div className="row">
           <Load addClass='column' />
         </div>
       </div>

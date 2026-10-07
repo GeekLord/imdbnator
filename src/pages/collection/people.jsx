@@ -99,7 +99,7 @@ export default class People extends React.Component {
 
     let Message = []
     if (total === 0){
-      Message.push(<div class="column">No people matching the criteron.</div>)
+      Message.push(<div className="column">No people matching the criteron.</div>)
     }
 
     let Posters = []
@@ -111,32 +111,32 @@ export default class People extends React.Component {
       if (i+1 < section[0]) continue
       if (i+1 > section[1]) break
       Posters.push(
-        <div class="no-padding eight wide mobile four wide tablet two wide computer column" key={componentKey++}>
+        <div className="no-padding eight wide mobile four wide tablet two wide computer column" key={componentKey++}>
           <PersonPoster className="ui fluid image" tmdbSize="w154" person={people[i]} />
         </div>
       )
     }
 
     return (
-      <div class="ui padded grid">
-        <div class="one column row">
-          <div class="ui secondary fluid menu">
+      <div className="ui padded grid">
+        <div className="one column row">
+          <div className="ui secondary fluid menu">
             <Pagination addClass="left menu" activePage={page} itemsPerPage={perPage} totalItems={total} dispatch={this._handlePaginationClick}>
-              <div class="item">Showing {section[0]} - {section[1]} of {total} people</div>
+              <div className="item">Showing {section[0]} - {section[1]} of {total} people</div>
             </Pagination>
-            <div class="right menu">
-              <a class={`${(this.state.sidebarVisible) ? 'active item' : 'item'}`} onClick={this._toggleSidebar.bind(this)}><i class="options icon"></i> Filter</a>
-              <div class="item">
-                <div class="ui icon transparent input">
-                  <input type="text" placeholder={this.state.placeholder} class="prompt" onChange={this._handleSearch.bind(this)}/>
-                  <i class="search icon"></i>
+            <div className="right menu">
+              <a className={`${(this.state.sidebarVisible) ? 'active item' : 'item'}`} onClick={this._toggleSidebar.bind(this)}><i className="options icon"></i> Filter</a>
+              <div className="item">
+                <div className="ui icon transparent input">
+                  <input type="text" placeholder={this.state.placeholder} className="prompt" onChange={this._handleSearch.bind(this)}/>
+                  <i className="search icon"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <PeopleSidebar visible={this.state.sidebarVisible} onFiltersChange={this._sidebarFiltersUpdate.bind(this)}/>
-          <div class="no-padding row">
+          <div className="no-padding row">
             { Message }
             { Posters }
           </div>

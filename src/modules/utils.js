@@ -63,7 +63,7 @@ function comma (string) {
   return string.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
 
-module.exports = {
+export {
   simpleHash,
   randomNumber,
   formatBytes,
@@ -73,6 +73,6 @@ module.exports = {
   comma
 }
 
-// const mockCollection = require('../samples/collection')
+// import mockCollection from '../samples/collection'
 // formatCollection(mockCollection)
 // console.log(JSON.stringify(formatCollection(mockCollection)))

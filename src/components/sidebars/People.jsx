@@ -125,63 +125,63 @@ export default class Sidebar extends React.Component {
     const genderAggregates= aggregates.gender.slice(0,2)
 
     return (
-      <div class={`${(this.props.visible) ? 'visible' : 'hidden'} ui overlay sidebar inverted vertical borderless menu`}>
-        <div class="search item" style={{paddingBottom: '1rem'}}>
-          <div class="ui transparent left icon inverted input">
-            <input class="prompt" type="text" placeholder="Search roles" autoComplete="off" onChange={this._handleSearch}/>
-            <i class="search link icon"></i>
+      <div className={`${(this.props.visible) ? 'visible' : 'hidden'} ui overlay sidebar inverted vertical borderless menu`}>
+        <div className="search item" style={{paddingBottom: '1rem'}}>
+          <div className="ui transparent left icon inverted input">
+            <input className="prompt" type="text" placeholder="Search roles" autoComplete="off" onChange={this._handleSearch}/>
+            <i className="search link icon"></i>
           </div>
         </div>
-        <div class="header item">
+        <div className="header item">
           JOB
         </div>
-        <div class="item">
-          <div class="ui inverted form">
-            <div class="grouped fields">
+        <div className="item">
+          <div className="ui inverted form">
+            <div className="grouped fields">
               {!isEmpty(jobAggregates) && jobAggregates.map(job => {
                 return(
-                  <div class="field" key={componentKey++}>
-                    <div class="ui checkbox">
+                  <div className="field" key={componentKey++}>
+                    <div className="ui checkbox">
                       <input type="checkbox" checked={job.isChecked} onChange={(e) => this._handleCheckBox(e, {field: 'jobs', value: job.name})} />
                       <label>{job.name}</label>
                     </div>
-                    <div class="ui mini label" style={{float: 'right'}}>{job.count}</div>
+                    <div className="ui mini label" style={{float: 'right'}}>{job.count}</div>
                   </div>
                 )
               })}
               {isEmpty(jobAggregates) && !isEmpty(this.state.searchValue) && 'No results'}
               {isEmpty(jobAggregates) && isEmpty(this.state.searchValue)  && 'No jobs data.'}
             </div>
-            {!this.state.showAll.jobs && jobAggregates.length >= 10 && <button class="ui submit mini fluid green button" onClick={(e) => this._handleShowAll(e, 'jobs')}>More</button>}
-            {this.state.showAll.jobs &&  jobAggregates.length >= 10 && <button class="ui submit mini fluid primary button" onClick={(e) => this._handleShowAll(e, 'jobs')}>Less</button>}
+            {!this.state.showAll.jobs && jobAggregates.length >= 10 && <button className="ui submit mini fluid green button" onClick={(e) => this._handleShowAll(e, 'jobs')}>More</button>}
+            {this.state.showAll.jobs &&  jobAggregates.length >= 10 && <button className="ui submit mini fluid primary button" onClick={(e) => this._handleShowAll(e, 'jobs')}>Less</button>}
           </div>
         </div>
-        {/*<div class="header item">
+        {/*<div className="header item">
           ROLE
         </div>
-        <div class="item">
-          <div class="ui inverted form">
-            <div class="grouped fields">
-              <div class="field">
-                <div class="ui checkbox">
+        <div className="item">
+          <div className="ui inverted form">
+            <div className="grouped fields">
+              <div className="field">
+                <div className="ui checkbox">
                   <input type="checkbox" />
                   <label>1st Lead</label>
                 </div>
               </div>
-              <div class="field">
-                <div class="ui checkbox">
+              <div className="field">
+                <div className="ui checkbox">
                   <input type="checkbox" />
                   <label>2nd Lead</label>
                 </div>
               </div>
-              <div class="field">
-                <div class="ui checkbox">
+              <div className="field">
+                <div className="ui checkbox">
                   <input type="checkbox" />
                   <label>3rd Lead</label>
                 </div>
               </div>
-              <div class="field">
-                <div class="ui checkbox">
+              <div className="field">
+                <div className="ui checkbox">
                   <input type="checkbox" />
                   <label>Support</label>
                 </div>
@@ -189,20 +189,20 @@ export default class Sidebar extends React.Component {
             </div>
           </div>
         </div>*/}
-        <div class="header item">
+        <div className="header item">
           GENDER
         </div>
-        <div class="item">
-          <div class="ui inverted form">
-            <div class="grouped fields">
+        <div className="item">
+          <div className="ui inverted form">
+            <div className="grouped fields">
               {!isEmpty(genderAggregates) && genderAggregates.map(gender => {
                 return(
-                  <div class="field" key={componentKey++}>
-                    <div class="ui checkbox">
+                  <div className="field" key={componentKey++}>
+                    <div className="ui checkbox">
                       <input type="checkbox" checked={gender.isChecked} onChange={(e) => this._handleCheckBox(e, {field: 'gender', value: gender.name})} />
                       <label>{`${(gender.name === 2) ? 'Actor' : 'Actress'}`}</label>
                     </div>
-                    <div class="ui mini label" style={{float: 'right'}}>{gender.count}</div>
+                    <div className="ui mini label" style={{float: 'right'}}>{gender.count}</div>
                   </div>
                 )
               })}

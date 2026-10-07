@@ -7,11 +7,11 @@ export default class Message extends React.Component {
   }
   render () {
     return (
-      <div class={`${(this.props.type === 'success') ? 'success' : 'error'} ${(this.props.isHidden) ? 'hidden' : ''} ui icon ${this.props.addClass} message `}>
-        <i class={`${(this.props.type === 'success') ? 'green check circle' : 'red info circle'} icon`} />
-        <i class='close icon' onClick={this.__handleCloseClick.bind(this)} />
-        <div class='content'>
-          <div class='header'>
+      <div className={`${(this.props.type === 'success') ? 'success' : 'error'} ${(this.props.isHidden) ? 'hidden' : ''} ui icon ${this.props.addClass} message `}>
+        <i className={`${(this.props.type === 'success') ? 'green check circle' : 'red info circle'} icon`} />
+        <i className='close icon' onClick={this.__handleCloseClick.bind(this)} />
+        <div className='content'>
+          <div className='header'>
             {this.props.header}
           </div>
           <p>{this.props.message}</p>
