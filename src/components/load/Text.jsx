@@ -77,11 +77,7 @@ export default class Text extends React.Component {
 
   render () {
     return (
-<<<<<<< HEAD
       <div className={`${!this.props.isActive && 'force hide'}`}>
-=======
-      <reactdiv className={`${!this.props.isActive && 'force hide'}`}>
->>>>>>> master
         <div className='ui very padded inverted segment'>
           <div className='ui form'>
             <div className='field'>

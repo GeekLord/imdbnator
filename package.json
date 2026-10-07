@@ -19,12 +19,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-decorators": "^7.29.7",
-<<<<<<< HEAD
     "@vitejs/plugin-react": "^4.7.0",
-    "@vitejs/plugin-react-swc": "^4.3.3",
-=======
-    "@vitejs/plugin-react": "^6.1.1",
->>>>>>> master
+    "playwright": "^1.63.0",
     "redux-logger": "^3.0.6",
     "vite": "^8.3.2"
   },

@@ -78,11 +78,7 @@ export default class Web extends React.Component {
 
   render () {
     return (
-<<<<<<< HEAD
       <div className={`${!this.props.isActive && 'force hide'}`}>
-=======
-      <reactdiv className={`${!this.props.isActive && 'force hide'}`}>
->>>>>>> master
         <div className='ui very padded inverted segment'>
           <div className='ui bottom right attached label'><i className='connectdevelop icon' /> Beta</div>
           <div className='ui form'>
